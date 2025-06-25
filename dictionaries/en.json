@@ -1,0 +1,477 @@
+{
+  "hero": {
+    "tagline": "AI-Powered Supply Chain Intelligence",
+    "title": {
+      "part1": "Automate Your Supply Chain",
+      "part2": "Today and Watch Your",
+      "part3": "Profits Soar!"
+    },
+    "description": "Streamline operations, cut costs, and boost customer satisfaction with automation that works smarter, not harder.",
+    "cta": "Optimize Your Supply Chain"
+  },
+  "header": {
+    "home": "Home",
+    "about": "About",
+    "solutions": "Solutions",
+    "howWeWork": "How We Work",
+    "successStory": "Success Story",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "getStarted": "Get Started"
+  },
+  "about": {
+    "title": "About Us",
+    "description": "We are a team of experts dedicated to transforming supply chains through innovative AI solutions.",
+    "features": [
+      {
+        "title": "Data-Driven Excellence",
+        "description": "Every decision backed by comprehensive analytics and intelligent insights"
+      },
+      {
+        "title": "Innovation Leadership",
+        "description": "Pioneering AI and automation technologies that transform supply chain operations"
+      },
+      {
+        "title": "Global Impact",
+        "description": "From Saudi Arabia to the world, delivering solutions that transcend borders"
+      }
+    ],
+    "stats": [
+      {
+        "value": "70+",
+        "label": "Client Successfully Served"
+      },
+      {
+        "value": "17",
+        "label": "Solutions Offered"
+      },
+      {
+        "value": "100%",
+        "label": "Client Satisfaction"
+      },
+      {
+        "value": "2023",
+        "label": "Founded in"
+      }
+    ]
+  },
+  "services": {
+    "title": "Our Solutions",
+    "description": "Comprehensive supply chain solutions powered by cutting-edge AI technology.",
+    "categories": {
+      "all": "All Solutions",
+      "analytics": "Analytics & Intelligence",
+      "operations": "Operations & Logistics",
+      "risk": "Risk & Compliance",
+      "technology": "Technology & Integration",
+      "services": "Services & Support"
+    },
+    "searchPlaceholder": "Search solutions...",
+    "items": [
+      {
+        "title": "AI-Driven Analytics",
+        "description": "Transform your supply chain data into actionable insights with our advanced AI analytics platform."
+      },
+      {
+        "title": "Demand Forecasting",
+        "description": "Predict market demands with 95% accuracy using our machine learning algorithms."
+      },
+      {
+        "title": "Inventory Optimization",
+        "description": "Optimize your inventory levels and reduce carrying costs with smart automation."
+      },
+      {
+        "title": "Route Optimization",
+        "description": "Minimize delivery times and fuel costs with AI-powered route planning."
+      },
+      {
+        "title": "Supply Chain Visibility",
+        "description": "Get real-time visibility into your entire supply chain operations."
+      },
+      {
+        "title": "Risk Management",
+        "description": "Identify and mitigate supply chain risks before they impact your business."
+      }
+    ]
+  },
+  "howWeWork": {
+    "title": "How We Work",
+    "description": "Our proven process for delivering exceptional results.",
+    "steps": [
+      {
+        "title": "Discovery",
+        "description": "We analyze your current operations and identify opportunities for improvement."
+      },
+      {
+        "title": "Strategy",
+        "description": "Our experts develop a customized solution tailored to your specific needs."
+      },
+      {
+        "title": "Development",
+        "description": "We build and test the solution with your team to ensure perfect fit."
+      },
+      {
+        "title": "Implementation",
+        "description": "Smooth deployment with comprehensive training and support."
+      },
+      {
+        "title": "Optimization",
+        "description": "Continuous monitoring and improvement to maximize results."
+      },
+      {
+        "title": "Success",
+        "description": "Achieve your supply chain goals with measurable results."
+      }
+    ]
+  },
+  "successStory": {
+    "title": "Success Stories",
+    "description": "See how we've helped businesses transform their supply chains.",
+    "metrics": [
+      {
+        "value": "40%",
+        "label": "Cost Reduction"
+      },
+      {
+        "value": "60%",
+        "label": "Faster Delivery"
+      },
+      {
+        "value": "95%",
+        "label": "Order Accuracy"
+      },
+      {
+        "value": "35%",
+        "label": "Revenue Growth"
+      }
+    ]
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "description": "Find answers to common questions about our services.",
+    "categories": [
+      {
+        "id": "services",
+        "title": "Services & Solutions"
+      },
+      {
+        "id": "benefits",
+        "title": "AI & Automation Benefits"
+      },
+      {
+        "id": "implementation",
+        "title": "Implementation Process"
+      },
+      {
+        "id": "security",
+        "title": "Security & Privacy"
+      },
+      {
+        "id": "pricing",
+        "title": "Pricing & Investment"
+      },
+      {
+        "id": "support",
+        "title": "Support & Maintenance"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contact Us",
+    "description": "Get in touch with our team to discuss your needs.",
+    "tagline": "Get in Touch",
+    "subtitle": "Let's Transform Your Supply Chain Together",
+    "subtitleDescription": "Ready to optimize your operations with AI and automation? Our experts are here to help you achieve measurable results. Contact us today to start your transformation journey.",
+    "formTitle": "Send us a Message",
+    "form": {
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Business Email",
+      "phone": "Phone Number",
+      "company": "Company",
+      "industry": "Industry",
+      "interest": "Area of Interest",
+      "message": "Project Details",
+      "consent": "I agree to receive communications from ITSC and understand that I can unsubscribe at any time.",
+      "submit": "Send Message",
+      "placeholders": {
+        "firstName": "Ahmed",
+        "lastName": "Al-Mansouri",
+        "email": "ahmed@company.com",
+        "phone": "+966 50 123 4567",
+        "company": "Your Company Name",
+        "industry": "Select your industry",
+        "interest": "Select solution type",
+        "message": "Tell us about your supply chain challenges, current systems, and goals. The more details you provide, the better we can assist you."
+      },
+      "industries": {
+        "retail": "Retail & E-commerce",
+        "logistics": "Logistics & Transportation",
+        "manufacturing": "Manufacturing",
+        "importExport": "Import/Export",
+        "healthcare": "Healthcare",
+        "automotive": "Automotive",
+        "other": "Other"
+      },
+      "interests": {
+        "demandForecasting": "Demand Forecasting",
+        "warehouseAutomation": "Warehouse Automation",
+        "routeOptimization": "Route Optimization",
+        "supplyChainVisibility": "Supply Chain Visibility",
+        "fleetManagement": "Fleet Management",
+        "riskManagement": "Risk Management",
+        "consultation": "General Consultation"
+      }
+    },
+    "methods": [
+      {
+        "title": "Phone Support",
+        "description": "Speak directly with our experts",
+        "details": [
+          {
+            "label": "Any Inquiries",
+            "value": "+966 58 012 2162"
+          }
+        ],
+        "availability": "24/7 Support Available"
+      },
+      {
+        "title": "Email Contact",
+        "description": "Get detailed responses to your inquiries",
+        "details": [
+          {
+            "label": "General Inquiries",
+            "value": "info@itsc.site"
+          }
+        ],
+        "availability": "Response within 2 hours"
+      }
+    ],
+    "actions": [
+      {
+        "title": "Schedule a Demo",
+        "description": "See our AI solutions in action",
+        "action": "Book Demo"
+      },
+      {
+        "title": "Consultation Call",
+        "description": "Discuss your supply chain challenges",
+        "action": "Schedule Call"
+      },
+      {
+        "title": "Technical Support",
+        "description": "Get help with existing solutions",
+        "action": "Get Support"
+      }
+    ],
+    "globalReach": {
+      "title": "Global Reach",
+      "description": "While headquartered in Saudi Arabia, ITSC serves clients across the Middle East, Africa, and beyond. Our solutions have been implemented in 25+ countries worldwide.",
+      "stats": {
+        "countries": "Countries Served",
+        "projects": "Projects Completed"
+      }
+    }
+  },
+  "footer": {
+    "company": {
+      "name": "ITSC",
+      "fullName": "Intelligent Transportation Services Company",
+      "description": "ITSC is the leading AI and automation company transforming supply chain operations across the Middle East and beyond. We deliver data-driven solutions that optimize logistics, reduce costs, and drive sustainable growth for businesses worldwide."
+    },
+    "contact": {
+      "email": "info@itsc.site",
+      "phone": "+966 58 012 2162"
+    },
+    "sections": {
+      "company": "Company",
+      "solutions": "Solutions",
+      "industries": "Industries",
+      "resources": "Resources",
+      "support": "Support",
+      "followUs": "Follow us",
+      "legal": "Legal"
+    },
+    "links": {
+      "company": [
+        {
+          "name": "About ITSC",
+          "href": "/about"
+        },
+        {
+          "name": "Our Solutions",
+          "href": "/services"
+        },
+        {
+          "name": "Success Stories",
+          "href": "/portfolio"
+        },
+        {
+          "name": "Leadership Team",
+          "href": "/team"
+        },
+        {
+          "name": "Careers",
+          "href": "/careers"
+        },
+        {
+          "name": "News & Media",
+          "href": "/news"
+        }
+      ],
+      "solutions": [
+        {
+          "name": "Demand Forecasting",
+          "href": "/solutions/demand-forecasting"
+        },
+        {
+          "name": "Warehouse Automation",
+          "href": "/solutions/warehouse-automation"
+        },
+        {
+          "name": "Route Optimization",
+          "href": "/solutions/route-optimization"
+        },
+        {
+          "name": "Supply Chain Visibility",
+          "href": "/solutions/visibility"
+        },
+        {
+          "name": "Fleet Management",
+          "href": "/solutions/fleet-management"
+        },
+        {
+          "name": "Risk Management",
+          "href": "/solutions/risk-management"
+        }
+      ],
+      "industries": [
+        {
+          "name": "Retail & E-commerce",
+          "href": "/industries/retail"
+        },
+        {
+          "name": "Logistics & Transportation",
+          "href": "/industries/logistics"
+        },
+        {
+          "name": "Manufacturing",
+          "href": "/industries/manufacturing"
+        },
+        {
+          "name": "Import/Export",
+          "href": "/industries/import-export"
+        },
+        {
+          "name": "Healthcare Supply Chain",
+          "href": "/industries/healthcare"
+        },
+        {
+          "name": "Automotive",
+          "href": "/industries/automotive"
+        }
+      ],
+      "resources": [
+        {
+          "name": "Blog & Insights",
+          "href": "/blog"
+        },
+        {
+          "name": "Case Studies",
+          "href": "/case-studies"
+        },
+        {
+          "name": "White Papers",
+          "href": "/resources/whitepapers"
+        },
+        {
+          "name": "Webinars",
+          "href": "/resources/webinars"
+        },
+        {
+          "name": "ROI Calculator",
+          "href": "/tools/roi-calculator"
+        },
+        {
+          "name": "Documentation",
+          "href": "/docs"
+        }
+      ],
+      "support": [
+        {
+          "name": "Help Center",
+          "href": "/support"
+        },
+        {
+          "name": "Technical Support",
+          "href": "/support/technical"
+        },
+        {
+          "name": "Training Resources",
+          "href": "/support/training"
+        },
+        {
+          "name": "System Status",
+          "href": "/status"
+        },
+        {
+          "name": "Contact Support",
+          "href": "/contact/support"
+        },
+        {
+          "name": "Partner Portal",
+          "href": "/partners"
+        }
+      ],
+      "legal": [
+        {
+          "name": "Privacy Policy",
+          "href": "/legal/privacy"
+        },
+        {
+          "name": "Terms of Service",
+          "href": "/legal/terms"
+        },
+        {
+          "name": "Data Protection",
+          "href": "/legal/data-protection"
+        },
+        {
+          "name": "Cookie Policy",
+          "href": "/legal/cookies"
+        },
+        {
+          "name": "Compliance",
+          "href": "/legal/compliance"
+        },
+        {
+          "name": "Security",
+          "href": "/legal/security"
+        }
+      ]
+    },
+    "social": [
+      {
+        "name": "LinkedIn",
+        "href": "https://linkedin.com/company/itsc-solutions"
+      },
+      {
+        "name": "Twitter",
+        "href": "https://twitter.com/itsc_solutions"
+      },
+      {
+        "name": "YouTube",
+        "href": "https://youtube.com/@itsc-solutions"
+      },
+      {
+        "name": "Facebook",
+        "href": "https://facebook.com/itsc.solutions"
+      },
+      {
+        "name": "Instagram",
+        "href": "https://instagram.com/itsc_solutions"
+      }
+    ],
+    "copyright": "© {year} ITSC (Intelligent Transportation Services Company). All rights reserved."
+  }
+}

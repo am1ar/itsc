@@ -1,0 +1,322 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import Google Fonts for Arabic support */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@100;200;300;400;500;600;700;800;900&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+	--background: 299 0% 100%;
+	--foreground: 299 0% 10%;
+	--card: 299 0% 100%;
+	--card-foreground: 299 0% 15%;
+	--popover: 299 0% 100%;
+	--popover-foreground: 299 95% 10%;
+	--primary: 299 73.7% 46.3%;
+	--primary-foreground: 0 0% 100%;
+	--secondary: 299 10% 90%;
+	--secondary-foreground: 0 0% 0%;
+	--muted: 261 10% 95%;
+	--muted-foreground: 299 0% 40%;
+	--accent: 261 10% 90%;
+	--accent-foreground: 299 0% 15%;
+	--destructive: 0 50% 50%;
+	--destructive-foreground: 299 0% 100%;
+	--border: 299 20% 82%;
+	--input: 299 20% 50%;
+	--ring: 299 73.7% 46.3%;
+	--radius: 1rem;
+}
+
+/* Dark theme colors */
+.dark {
+	--background: 299 10% 10%;
+	--foreground: 299 0% 100%;
+	--card: 299 0% 10%;
+	--card-foreground: 299 0% 100%;
+	--popover: 299 10% 10%;
+	--popover-foreground: 299 0% 100%;
+	--primary: 299 73.7% 46.3%;
+	--primary-foreground: 0 0% 100%;
+	--secondary: 299 10% 20%;
+	--secondary-foreground: 299 0% 100%;
+	--muted: 261 10% 15%;
+	--muted-foreground: 299 0% 65%;
+	--accent: 261 10% 15%;
+	--accent-foreground: 299 0% 100%;
+	--destructive: 0 50% 50%;
+	--destructive-foreground: 299 0% 100%;
+	--border: 299 20% 18%;
+	--input: 299 20% 18%;
+	--ring: 299 73.7% 46.3%;
+}
+
+* {
+	border-color: hsl(var(--border));
+}
+
+body {
+	color: hsl(var(--foreground));
+	background: hsl(var(--background));
+	font-feature-settings: 'rlig' 1, 'calt' 1;
+}
+
+/* Default font families */
+body {
+	font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+		'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Arabic font support */
+.font-arabic,
+[lang='ar'],
+[dir='rtl'] {
+	font-family: 'Noto Sans Arabic', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+		Roboto, 'Helvetica Neue', Arial, sans-serif !important;
+}
+
+/* Smooth transitions for direction changes */
+html {
+	transition: direction 0.3s ease;
+}
+
+/* RTL Adjustments */
+[dir='rtl'] {
+	text-align: right;
+}
+
+[dir='rtl'] .text-left {
+	text-align: right;
+}
+
+[dir='rtl'] .text-right {
+	text-align: left;
+}
+
+[dir='rtl'] .text-center {
+	text-align: center;
+}
+
+/* Margin and padding RTL adjustments */
+[dir='rtl'] .mr-1 {
+	margin-right: 0;
+	margin-left: 0.25rem;
+}
+
+[dir='rtl'] .mr-2 {
+	margin-right: 0;
+	margin-left: 0.5rem;
+}
+
+[dir='rtl'] .mr-3 {
+	margin-right: 0;
+	margin-left: 0.75rem;
+}
+
+[dir='rtl'] .ml-2 {
+	margin-left: 0;
+	margin-right: 0.5rem;
+}
+
+[dir='rtl'] .ml-3 {
+	margin-left: 0;
+	margin-right: 0.75rem;
+}
+
+[dir='rtl'] .pl-3 {
+	padding-left: 0;
+	padding-right: 0.75rem;
+}
+
+[dir='rtl'] .pr-3 {
+	padding-right: 0;
+	padding-left: 0.75rem;
+}
+
+[dir='rtl'] .border-l {
+	border-left: none;
+	border-right: 1px solid;
+}
+
+[dir='rtl'] .border-r {
+	border-right: none;
+	border-left: 1px solid;
+}
+
+/* RTL Navigation adjustments */
+[dir='rtl'] .rounded-full {
+	direction: rtl;
+}
+
+[dir='rtl'] .justify-between {
+	flex-direction: row-reverse;
+}
+
+/* Arabic Form Elements Support */
+[dir='rtl'] input,
+[dir='rtl'] textarea,
+[dir='rtl'] select {
+	text-align: right;
+	font-family: 'Noto Sans Arabic', sans-serif;
+}
+
+[dir='rtl'] input::placeholder,
+[dir='rtl'] textarea::placeholder {
+	text-align: right;
+	opacity: 0.7;
+}
+
+/* RTL Form Layout adjustments */
+[dir='rtl'] .grid {
+	direction: rtl;
+}
+
+[dir='rtl'] .flex-row-reverse {
+	flex-direction: row-reverse;
+}
+
+/* RTL Button adjustments */
+[dir='rtl'] .flex.items-center {
+	flex-direction: row-reverse;
+}
+
+/* RTL Contact Section specific enhancements */
+[dir='rtl'] .space-x-3 > :not([hidden]) ~ :not([hidden]) {
+	--tw-space-x-reverse: 1;
+	margin-right: calc(0.75rem * var(--tw-space-x-reverse));
+	margin-left: calc(0.75rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+[dir='rtl'] .gap-2 {
+	gap: 0.5rem;
+}
+
+[dir='rtl'] .gap-3 {
+	gap: 0.75rem;
+}
+
+[dir='rtl'] .gap-4 {
+	gap: 1rem;
+}
+
+/* Enhanced dropdown for LocaleSwitcher in RTL */
+[dir='rtl'] .absolute.right-0 {
+	right: auto;
+	left: 0;
+}
+
+[dir='rtl'] .origin-top-right {
+	transform-origin: top left;
+}
+
+/* Contact form enhancements for RTL */
+[dir='rtl'] .min-w-\[120px\] {
+	min-width: 120px;
+}
+
+/* Animation support for RTL */
+[dir='rtl'] .animate-spin {
+	animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+/* Smooth language transition effects */
+.language-transition {
+	transition: all 0.3s ease-in-out;
+}
+
+/* Enhanced typography for Arabic */
+[dir='rtl'] h1,
+[dir='rtl'] h2,
+[dir='rtl'] h3,
+[dir='rtl'] h4,
+[dir='rtl'] h5,
+[dir='rtl'] h6 {
+	font-family: 'Noto Sans Arabic', sans-serif;
+	line-height: 1.6;
+}
+
+[dir='rtl'] p,
+[dir='rtl'] span,
+[dir='rtl'] div {
+	font-family: 'Noto Sans Arabic', sans-serif;
+	line-height: 1.7;
+}
+
+/* Contact section specific RTL improvements */
+[dir='rtl'] .contact-form-grid {
+	direction: rtl;
+}
+
+[dir='rtl'] .contact-method-icon {
+	margin-left: 1rem;
+	margin-right: 0;
+}
+
+[dir='rtl'] .contact-details {
+	text-align: right;
+}
+
+/* Enhanced footer RTL support */
+[dir='rtl'] .footer-grid {
+	direction: rtl;
+}
+
+[dir='rtl'] .footer-links {
+	text-align: right;
+}
+
+[dir='rtl'] .social-icons {
+	flex-direction: row-reverse;
+}
+
+[dir='rtl'] .footer-contact {
+	flex-direction: row-reverse;
+}
+
+/* Footer animation improvements */
+.footer-link-hover {
+	transition: all 0.2s ease-in-out;
+}
+
+.footer-link-hover:hover {
+	transform: translateX(2px);
+}
+
+[dir='rtl'] .footer-link-hover:hover {
+	transform: translateX(-2px);
+}
+
+/* Social media buttons */
+.social-button {
+	transition: all 0.2s ease-in-out;
+}
+
+.social-button:hover {
+	transform: scale(1.1);
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Footer bottom section improvements */
+[dir='rtl'] .footer-bottom {
+	flex-direction: row-reverse;
+}
+
+/* Mobile footer improvements */
+@media (max-width: 768px) {
+	[dir='rtl'] .footer-mobile-grid {
+		text-align: right;
+	}
+
+	[dir='rtl'] .footer-mobile-contact {
+		flex-direction: row-reverse;
+	}
+}
