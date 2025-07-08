@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useState } from "react";
 import {
   Phone,
   Mail,
@@ -12,6 +13,9 @@ import {
   Headphones,
   Building2,
   Globe,
+  Loader2,
+  CheckCircle,
+  AlertCircle,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -29,6 +33,95 @@ export default function ContactSection({
 }: ContactSectionProps) {
   // Determine text direction based on language
   const isRTL = lang === "ar";
+
+  // Form state
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    company: "",
+    industry: "",
+    interest: "",
+    message: "",
+    consent: false,
+  });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{
+    type: "success" | "error" | null;
+    message: string;
+  }>({ type: null, message: "" });
+
+  // Handle form input changes
+  const handleInputChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
+    const { name, value, type } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]:
+        type === "checkbox" ? (e.target as HTMLInputElement).checked : value,
+    }));
+  };
+
+  // Handle form submission
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus({ type: null, message: "" });
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...formData,
+          language: lang,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setSubmitStatus({
+          type: "success",
+          message: isRTL
+            ? "تم إرسال رسالتك بنجاح! سنتواصل معك قريباً."
+            : "Your message has been sent successfully! We'll get back to you soon.",
+        });
+
+        // Reset form
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          phone: "",
+          company: "",
+          industry: "",
+          interest: "",
+          message: "",
+          consent: false,
+        });
+      } else {
+        throw new Error(result.message || "Failed to submit form");
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      setSubmitStatus({
+        type: "error",
+        message: isRTL
+          ? "حدث خطأ أثناء إرسال الرسالة. يرجى المحاولة مرة أخرى."
+          : "An error occurred while sending your message. Please try again.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <section
@@ -119,11 +212,41 @@ export default function ContactSection({
               >
                 {dictionary.contact.formTitle}
               </h3>
-              <form className="space-y-6">
+              <form className="space-y-6" onSubmit={handleSubmit}>
+                {/* Success/Error Messages */}
+                {submitStatus.type && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className={cn(
+                      "p-4 rounded-lg border",
+                      submitStatus.type === "success"
+                        ? "bg-green-50 border-green-200 text-green-800 dark:bg-green-900/20 dark:border-green-800 dark:text-green-400"
+                        : "bg-red-50 border-red-200 text-red-800 dark:bg-red-900/20 dark:border-red-800 dark:text-red-400"
+                    )}
+                  >
+                    <div
+                      className={cn(
+                        "flex items-center gap-2",
+                        isRTL && "flex-row-reverse"
+                      )}
+                    >
+                      {submitStatus.type === "success" ? (
+                        <CheckCircle className="w-5 h-5" />
+                      ) : (
+                        <AlertCircle className="w-5 h-5" />
+                      )}
+                      <span className={cn(isRTL && "font-arabic text-right")}>
+                        {submitStatus.message}
+                      </span>
+                    </div>
+                  </motion.div>
+                )}
+
                 <div className="grid gap-6 md:grid-cols-2">
                   <div>
                     <label
-                      htmlFor="first-name"
+                      htmlFor="firstName"
                       className={cn(
                         "block text-sm font-medium mb-2 text-foreground dark:text-foreground",
                         isRTL && "text-right font-arabic"
@@ -132,8 +255,12 @@ export default function ContactSection({
                       {dictionary.contact.form.firstName} *
                     </label>
                     <Input
-                      id="first-name"
+                      id="firstName"
+                      name="firstName"
                       required
+                      value={formData.firstName}
+                      onChange={handleInputChange}
+                      disabled={isSubmitting}
                       className={cn(
                         "bg-background dark:bg-background border-border dark:border-border",
                         isRTL && "text-right font-arabic"
@@ -146,7 +273,7 @@ export default function ContactSection({
                   </div>
                   <div>
                     <label
-                      htmlFor="last-name"
+                      htmlFor="lastName"
                       className={cn(
                         "block text-sm font-medium mb-2 text-foreground dark:text-foreground",
                         isRTL && "text-right font-arabic"
@@ -155,8 +282,12 @@ export default function ContactSection({
                       {dictionary.contact.form.lastName} *
                     </label>
                     <Input
-                      id="last-name"
+                      id="lastName"
+                      name="lastName"
                       required
+                      value={formData.lastName}
+                      onChange={handleInputChange}
+                      disabled={isSubmitting}
                       className={cn(
                         "bg-background dark:bg-background border-border dark:border-border",
                         isRTL && "text-right font-arabic"
@@ -180,8 +311,12 @@ export default function ContactSection({
                   </label>
                   <Input
                     id="email"
+                    name="email"
                     type="email"
                     required
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    disabled={isSubmitting}
                     className={cn(
                       "bg-background dark:bg-background border-border dark:border-border",
                       isRTL && "text-right font-arabic"
@@ -203,7 +338,11 @@ export default function ContactSection({
                     </label>
                     <Input
                       id="phone"
+                      name="phone"
                       type="tel"
+                      value={formData.phone}
+                      onChange={handleInputChange}
+                      disabled={isSubmitting}
                       className={cn(
                         "bg-background dark:bg-background border-border dark:border-border",
                         isRTL && "text-right font-arabic"
@@ -224,7 +363,11 @@ export default function ContactSection({
                     </label>
                     <Input
                       id="company"
+                      name="company"
                       required
+                      value={formData.company}
+                      onChange={handleInputChange}
+                      disabled={isSubmitting}
                       className={cn(
                         "bg-background dark:bg-background border-border dark:border-border",
                         isRTL && "text-right font-arabic"
@@ -246,6 +389,10 @@ export default function ContactSection({
                   </label>
                   <select
                     id="industry"
+                    name="industry"
+                    value={formData.industry}
+                    onChange={handleInputChange}
+                    disabled={isSubmitting}
                     className={cn(
                       "w-full px-3 py-2 bg-background dark:bg-background border border-border dark:border-border rounded-md text-foreground dark:text-foreground",
                       isRTL && "text-right font-arabic"
@@ -290,6 +437,10 @@ export default function ContactSection({
                   </label>
                   <select
                     id="interest"
+                    name="interest"
+                    value={formData.interest}
+                    onChange={handleInputChange}
+                    disabled={isSubmitting}
                     className={cn(
                       "w-full px-3 py-2 bg-background dark:bg-background border border-border dark:border-border rounded-md text-foreground dark:text-foreground",
                       isRTL && "text-right font-arabic"
@@ -334,9 +485,13 @@ export default function ContactSection({
                   </label>
                   <Textarea
                     id="message"
+                    name="message"
                     rows={4}
                     placeholder={dictionary.contact.form.placeholders.message}
                     required
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    disabled={isSubmitting}
                     className={cn(
                       "bg-background dark:bg-background border-border dark:border-border",
                       isRTL && "text-right font-arabic"
@@ -353,8 +508,12 @@ export default function ContactSection({
                   <input
                     type="checkbox"
                     id="consent"
+                    name="consent"
                     className="mt-1"
                     required
+                    checked={formData.consent}
+                    onChange={handleInputChange}
+                    disabled={isSubmitting}
                   />
                   <label
                     htmlFor="consent"
@@ -369,13 +528,27 @@ export default function ContactSection({
                 <Button
                   type="submit"
                   size="lg"
+                  disabled={isSubmitting}
                   className={cn(
-                    "w-full bg-primary dark:bg-primary text-primary-foreground dark:text-primary-foreground hover:bg-primary/90 dark:hover:bg-primary/90",
+                    "w-full bg-primary dark:bg-primary text-primary-foreground dark:text-primary-foreground hover:bg-primary/90 dark:hover:bg-primary/90 disabled:opacity-50",
                     isRTL && "font-arabic"
                   )}
                 >
-                  <Send className={cn("h-4 w-4", isRTL ? "ml-2" : "mr-2")} />
-                  {dictionary.contact.form.submit}
+                  {isSubmitting ? (
+                    <Loader2
+                      className={cn(
+                        "h-4 w-4 animate-spin",
+                        isRTL ? "ml-2" : "mr-2"
+                      )}
+                    />
+                  ) : (
+                    <Send className={cn("h-4 w-4", isRTL ? "ml-2" : "mr-2")} />
+                  )}
+                  {isSubmitting
+                    ? isRTL
+                      ? "جارٍ الإرسال..."
+                      : "Sending..."
+                    : dictionary.contact.form.submit}
                 </Button>
               </form>
             </div>
