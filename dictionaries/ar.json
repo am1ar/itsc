@@ -42,11 +42,11 @@
         "label": "عميل تم خدمتهم بنجاح"
       },
       {
-        "value": "17",
+        "value": "+20",
         "label": "حلول مقدمة"
       },
       {
-        "value": "100%",
+        "value": "99%",
         "label": "رضا العملاء"
       },
       {
@@ -195,9 +195,9 @@
       "consent": "أوافق على تلقي المراسلات من ITSC وأفهم أنه يمكنني إلغاء الاشتراك في أي وقت.",
       "submit": "إرسال الرسالة",
       "placeholders": {
-        "firstName": "أحمد",
-        "lastName": "المنصوري",
-        "email": "ahmed@company.com",
+        "firstName": "الاسم الاول",
+        "lastName": "اسم العائلة",
+        "email": "info@company.com",
         "phone": "+966 50 123 4567",
         "company": "اسم شركتك",
         "industry": "اختر صناعتك",
@@ -230,7 +230,7 @@
         "details": [
           {
             "label": "أي استفسارات",
-            "value": "+966 58 012 2162"
+            "value": "+966580122162"
           }
         ],
         "availability": "دعم متوفر على مدار الساعة"
@@ -275,13 +275,13 @@
   },
   "footer": {
     "company": {
-      "name": "آيتسك",
-      "fullName": "شركة الخدمات النقلية الذكية",
-      "description": "آيتسك هي الشركة الرائدة في مجال الذكاء الاصطناعي والأتمتة في تحويل عمليات سلسلة التوريد في الشرق الأوسط وما وراءها. نحن نقدم حلولاً مدفوعة بالبيانات تعمل على تحسين الخدمات اللوجستية وخفض التكاليف ودفع النمو المستدام للشركات في جميع أنحاء العالم."
+      "name": "ITSC",
+      "fullName": "شركة خدمات النقل الذكية",
+      "description": "ITSC هي الشركة الرائدة في مجال الذكاء الاصطناعي والأتمتة في تحويل عمليات سلسلة التوريد في الشرق الأوسط وما وراءها. نحن نقدم حلولاً مدفوعة بالبيانات تعمل على تحسين الخدمات اللوجستية وخفض التكاليف ودفع النمو المستدام للشركات في جميع أنحاء العالم."
     },
     "contact": {
       "email": "info@itsc.site",
-      "phone": "+966 58 012 2162"
+      "phone": "+966580122162"
     },
     "sections": {
       "company": "الشركة",
@@ -295,7 +295,7 @@
     "links": {
       "company": [
         {
-          "name": "حول آيتسك",
+          "name": "حول ITSC",
           "href": "/about"
         },
         {
@@ -381,7 +381,7 @@
           "href": "/case-studies"
         },
         {
-          "name": "الأوراق البيضاء",
+          "name": "المستندات التقنية",
           "href": "/resources/whitepapers"
         },
         {
@@ -453,25 +453,21 @@
     "social": [
       {
         "name": "لينكد إن",
-        "href": "https://linkedin.com/company/itsc-solutions"
+        "href": "https://www.linkedin.com/company/intelligent-transportation-services-company/"
       },
       {
         "name": "تويتر",
-        "href": "https://twitter.com/itsc_solutions"
-      },
-      {
-        "name": "يوتيوب",
-        "href": "https://youtube.com/@itsc-solutions"
+        "href": "https://twitter.com/itsc_site"
       },
       {
         "name": "فيسبوك",
-        "href": "https://facebook.com/itsc.solutions"
+        "href": "https://facebook.com/itsc_site"
       },
       {
         "name": "إنستغرام",
-        "href": "https://instagram.com/itsc_solutions"
+        "href": "https://instagram.com/itsc_site"
       }
     ],
-    "copyright": "© {year} آيتسك (شركة الخدمات النقلية الذكية). جميع الحقوق محفوظة."
+    "copyright": "© {year} ITSC (شركة خدمات النقل الذكية). جميع الحقوق محفوظة."
   }
 }

@@ -15,7 +15,7 @@ export const contactData = {
 				title: 'Phone Support',
 				description: 'Speak directly with our experts',
 				details: [
-					{ label: 'Any Inquiries', value: '+966 58 012 2162', type: 'tel' },
+					{ label: 'Any Inquiries', value: '+966580122162', type: 'tel' },
 				],
 				availability: '24/7 Support Available',
 			},
@@ -96,7 +96,7 @@ export const contactData = {
 				title: 'الدعم الهاتفي',
 				description: 'تحدث مباشرة مع خبرائنا',
 				details: [
-					{ label: 'أي استفسارات', value: '+966 58 012 2162', type: 'tel' },
+					{ label: 'أي استفسارات', value: '+966580122162', type: 'tel' },
 				],
 				availability: 'دعم متاح على مدار الساعة',
 			},

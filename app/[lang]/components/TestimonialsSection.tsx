@@ -1,8 +1,17 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import { ChevronLeft, ChevronRight, Quote, Star, TrendingUp, DollarSign, Clock, Target } from "lucide-react"
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  ChevronLeft,
+  ChevronRight,
+  Quote,
+  Star,
+  TrendingUp,
+  DollarSign,
+  Clock,
+  Target,
+} from "lucide-react";
 
 const testimonials = [
   {
@@ -119,30 +128,23 @@ const testimonials = [
     projectType: "Risk Management",
     rating: 5,
   },
-]
-
-const overallStats = [
-  { label: "Client Satisfaction Rate", value: "98%", icon: Target },
-  { label: "Average ROI Delivered", value: "340%", icon: TrendingUp },
-  { label: "Total Cost Savings", value: "$15M+", icon: DollarSign },
-  { label: "Projects Completed", value: "150+", icon: Clock },
-]
+];
 
 export default function TestimonialsSection() {
-  const [currentIndex, setCurrentIndex] = useState(0)
-  const [direction, setDirection] = useState(0)
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true)
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [direction, setDirection] = useState(0);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
   useEffect(() => {
-    if (!isAutoPlaying) return
+    if (!isAutoPlaying) return;
 
     const interval = setInterval(() => {
-      setDirection(1)
-      setCurrentIndex((prev) => (prev + 1) % testimonials.length)
-    }, 6000)
+      setDirection(1);
+      setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+    }, 6000);
 
-    return () => clearInterval(interval)
-  }, [isAutoPlaying])
+    return () => clearInterval(interval);
+  }, [isAutoPlaying]);
 
   const slideVariants = {
     enter: (direction: number) => ({
@@ -159,22 +161,25 @@ export default function TestimonialsSection() {
       x: direction < 0 ? 1000 : -1000,
       opacity: 0,
     }),
-  }
+  };
 
-  const swipeConfidenceThreshold = 10000
+  const swipeConfidenceThreshold = 10000;
   const swipePower = (offset: number, velocity: number) => {
-    return Math.abs(offset) * velocity
-  }
+    return Math.abs(offset) * velocity;
+  };
 
   const paginate = (newDirection: number) => {
-    setDirection(newDirection)
-    setCurrentIndex((prev) => (prev + newDirection + testimonials.length) % testimonials.length)
-    setIsAutoPlaying(false)
+    setDirection(newDirection);
+    setCurrentIndex(
+      (prev) =>
+        (prev + newDirection + testimonials.length) % testimonials.length
+    );
+    setIsAutoPlaying(false);
     // Resume auto-play after 10 seconds
-    setTimeout(() => setIsAutoPlaying(true), 10000)
-  }
+    setTimeout(() => setIsAutoPlaying(true), 10000);
+  };
 
-  const currentTestimonial = testimonials[currentIndex]
+  const currentTestimonial = testimonials[currentIndex];
 
   return (
     <section className="relative z-10 px-6 py-24 bg-background dark:bg-background">
@@ -187,14 +192,17 @@ export default function TestimonialsSection() {
           transition={{ duration: 0.6 }}
         >
           <div className="inline-flex items-center rounded-full border border-primary/20 bg-primary/10 dark:border-primary/30 dark:bg-primary/20 px-4 py-2 mb-6">
-            <span className="text-sm font-semibold text-primary">Client Success Stories</span>
+            <span className="text-sm font-semibold text-primary">
+              Client Success Stories
+            </span>
           </div>
           <h2 className="text-4xl font-mono mb-4 text-foreground dark:text-foreground">
             Trusted by Industry <span className="text-primary">Leaders</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Discover how ITSC's AI and automation solutions have transformed supply chain operations for leading
-            companies across the Middle East and beyond.
+            Discover how ITSC's AI and automation solutions have transformed
+            supply chain operations for leading companies across the Middle East
+            and beyond.
           </p>
         </motion.div>
 
@@ -233,12 +241,12 @@ export default function TestimonialsSection() {
                 dragConstraints={{ left: 0, right: 0 }}
                 dragElastic={1}
                 onDragEnd={(e, { offset, velocity }) => {
-                  const swipe = swipePower(offset.x, velocity.x)
+                  const swipe = swipePower(offset.x, velocity.x);
 
                   if (swipe < -swipeConfidenceThreshold) {
-                    paginate(1)
+                    paginate(1);
                   } else if (swipe > swipeConfidenceThreshold) {
-                    paginate(-1)
+                    paginate(-1);
                   }
                 }}
                 className="absolute w-full h-full"
@@ -250,7 +258,10 @@ export default function TestimonialsSection() {
                       <Quote className="h-12 w-12 text-primary mb-4" />
                       <div className="flex items-center gap-1 mb-4">
                         {[...Array(currentTestimonial.rating)].map((_, i) => (
-                          <Star key={i} className="h-5 w-5 fill-primary text-primary" />
+                          <Star
+                            key={i}
+                            className="h-5 w-5 fill-primary text-primary"
+                          />
                         ))}
                       </div>
                     </div>
@@ -269,9 +280,15 @@ export default function TestimonialsSection() {
                         <div className="font-semibold text-lg text-foreground dark:text-foreground">
                           {currentTestimonial.author}
                         </div>
-                        <div className="text-muted-foreground">{currentTestimonial.position}</div>
-                        <div className="text-primary font-medium">{currentTestimonial.company}</div>
-                        <div className="text-sm text-muted-foreground">{currentTestimonial.location}</div>
+                        <div className="text-muted-foreground">
+                          {currentTestimonial.position}
+                        </div>
+                        <div className="text-primary font-medium">
+                          {currentTestimonial.company}
+                        </div>
+                        <div className="text-sm text-muted-foreground">
+                          {currentTestimonial.location}
+                        </div>
                       </div>
                     </div>
 
@@ -297,17 +314,25 @@ export default function TestimonialsSection() {
                             <result.icon className="w-6 h-6 text-primary" />
                           </div>
                           <div>
-                            <div className="text-2xl font-bold text-primary">{result.value}</div>
-                            <div className="text-sm text-muted-foreground">{result.metric}</div>
+                            <div className="text-2xl font-bold text-primary">
+                              {result.value}
+                            </div>
+                            <div className="text-sm text-muted-foreground">
+                              {result.metric}
+                            </div>
                           </div>
                         </div>
                       ))}
                     </div>
 
                     <div className="mt-8 p-4 rounded-lg bg-primary/5 border border-primary/20">
-                      <div className="text-sm font-medium text-primary mb-1">Company Logo</div>
+                      <div className="text-sm font-medium text-primary mb-1">
+                        Company Logo
+                      </div>
                       <img
-                        src={currentTestimonial.companyLogo || "/placeholder.svg"}
+                        src={
+                          currentTestimonial.companyLogo || "/placeholder.svg"
+                        }
                         alt={`${currentTestimonial.company} logo`}
                         className="h-8 opacity-70"
                       />
@@ -342,13 +367,15 @@ export default function TestimonialsSection() {
               <button
                 key={index}
                 onClick={() => {
-                  setDirection(index > currentIndex ? 1 : -1)
-                  setCurrentIndex(index)
-                  setIsAutoPlaying(false)
-                  setTimeout(() => setIsAutoPlaying(true), 10000)
+                  setDirection(index > currentIndex ? 1 : -1);
+                  setCurrentIndex(index);
+                  setIsAutoPlaying(false);
+                  setTimeout(() => setIsAutoPlaying(true), 10000);
                 }}
                 className={`w-3 h-3 rounded-full transition-colors ${
-                  index === currentIndex ? "bg-primary" : "bg-muted hover:bg-primary/50"
+                  index === currentIndex
+                    ? "bg-primary"
+                    : "bg-muted hover:bg-primary/50"
                 }`}
                 aria-label={`Go to testimonial ${index + 1}`}
               />
@@ -368,9 +395,9 @@ export default function TestimonialsSection() {
               key={testimonial.id}
               className="p-6 bg-card dark:bg-card rounded-xl border border-border hover:border-primary/50 transition-colors cursor-pointer"
               onClick={() => {
-                setDirection(testimonial.id > currentIndex ? 1 : -1)
-                setCurrentIndex(testimonial.id - 1)
-                setIsAutoPlaying(false)
+                setDirection(testimonial.id > currentIndex ? 1 : -1);
+                setCurrentIndex(testimonial.id - 1);
+                setIsAutoPlaying(false);
               }}
             >
               <div className="flex items-center gap-3 mb-4">
@@ -380,11 +407,17 @@ export default function TestimonialsSection() {
                   className="w-12 h-12 rounded-full object-cover"
                 />
                 <div>
-                  <div className="font-semibold text-foreground dark:text-foreground">{testimonial.author}</div>
-                  <div className="text-sm text-muted-foreground">{testimonial.company}</div>
+                  <div className="font-semibold text-foreground dark:text-foreground">
+                    {testimonial.author}
+                  </div>
+                  <div className="text-sm text-muted-foreground">
+                    {testimonial.company}
+                  </div>
                 </div>
               </div>
-              <p className="text-sm text-muted-foreground line-clamp-3">"{testimonial.content}"</p>
+              <p className="text-sm text-muted-foreground line-clamp-3">
+                "{testimonial.content}"
+              </p>
               <div className="flex items-center gap-1 mt-3">
                 {[...Array(testimonial.rating)].map((_, i) => (
                   <Star key={i} className="h-4 w-4 fill-primary text-primary" />
@@ -405,8 +438,9 @@ export default function TestimonialsSection() {
             Ready to Transform Your Supply Chain?
           </h3>
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Join industry leaders who have achieved remarkable results with ITSC's AI and automation solutions. Contact
-            us to learn how we can transform your supply chain operations.
+            Join industry leaders who have achieved remarkable results with
+            ITSC's AI and automation solutions. Contact us to learn how we can
+            transform your supply chain operations.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             {/* <button className="px-8 py-3 bg-primary text-primary-foreground rounded-full text-lg font-semibold hover:bg-primary/90 transition-colors">
@@ -419,5 +453,5 @@ export default function TestimonialsSection() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }
