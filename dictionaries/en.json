@@ -195,9 +195,9 @@
       "consent": "I agree to receive communications from ITSC and understand that I can unsubscribe at any time.",
       "submit": "Send Message",
       "placeholders": {
-        "firstName": "Ahmed",
-        "lastName": "Al-Mansouri",
-        "email": "ahmed@company.com",
+        "firstName": "First Name",
+        "lastName": "Last Name",
+        "email": "name@company.com",
         "phone": "+966 50 123 4567",
         "company": "Your Company Name",
         "industry": "Select your industry",
