@@ -5,13 +5,8 @@ import {
 	Mail,
 	Phone,
 	MapPin,
-	Facebook,
-	Twitter,
 	Linkedin,
-	Youtube,
-	Instagram,
-	ArrowRight,
-	ArrowLeft,
+	AreaChart,
 } from 'lucide-react';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
@@ -26,26 +21,6 @@ export default function Footer({ dictionary, lang }: FooterProps) {
 	const isRTL = lang === 'ar';
 	const currentYear = new Date().getFullYear();
 
-	// Get the appropriate arrow icon based on direction
-	const ArrowIcon = isRTL ? ArrowLeft : ArrowRight;
-
-	// Social media icon mapping
-	const getSocialIcon = (name: string) => {
-		const iconMap: { [key: string]: any } = {
-			LinkedIn: Linkedin,
-			'لينكد إن': Linkedin,
-			Twitter: Twitter,
-			تويتر: Twitter,
-			YouTube: Youtube,
-			يوتيوب: Youtube,
-			Facebook: Facebook,
-			فيسبوك: Facebook,
-			Instagram: Instagram,
-			إنستغرام: Instagram,
-		};
-		return iconMap[name] || Mail;
-	};
-
 	return (
 		<footer
 			className={cn(
@@ -54,81 +29,76 @@ export default function Footer({ dictionary, lang }: FooterProps) {
 			)}
 			dir={isRTL ? 'rtl' : 'ltr'}
 		>
+			{/* Main Footer Content */}
 			<div className='mx-auto max-w-7xl px-6 py-16'>
-				{/* Main Footer Content */}
 				<div className='grid gap-12 lg:grid-cols-4 md:grid-cols-2'>
-					{/* Company Info */}
+					{/* Column 1: Company & Brand */}
 					<motion.div
 						className='lg:col-span-1'
 						initial={{ opacity: 0, y: 20 }}
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.6 }}
 					>
-						<div className='mb-6'>
-							<h3
-								className={cn(
-									'text-2xl font-bold text-foreground dark:text-foreground mb-2',
-									isRTL && 'text-right font-arabic'
-								)}
-							>
-								{dictionary.footer.company.name}
-							</h3>
+						{/* Logo */}
+						<div className={cn('mb-6', isRTL && 'text-right')}>
+							<div className={cn(
+								'flex items-center gap-2 mb-4',
+								isRTL && 'flex-row-reverse justify-end'
+							)}>
+								<div className='relative'>
+									<div className='absolute -inset-1 bg-gradient-to-r from-green-600 to-primary rounded-full blur-sm opacity-70'></div>
+									<div className='relative bg-background dark:bg-background rounded-full p-1.5'>
+										<AreaChart className='h-6 w-6 text-primary' />
+									</div>
+								</div>
+								<span className='text-2xl font-bold text-foreground dark:text-foreground'>
+									{dictionary.footer.company.name}
+								</span>
+							</div>
 							<p
 								className={cn(
-									'text-sm text-muted-foreground font-medium',
+									'text-sm text-muted-foreground font-medium mb-4',
 									isRTL && 'text-right font-arabic'
 								)}
 							>
 								{dictionary.footer.company.fullName}
 							</p>
 						</div>
+
+						{/* Mission/Tagline */}
 						<p
 							className={cn(
 								'text-sm text-muted-foreground mb-6 leading-relaxed',
 								isRTL && 'text-right font-arabic'
 							)}
 						>
-							{dictionary.footer.company.description}
+							{dictionary.footer.company.mission}
 						</p>
 
-						{/* Contact Info */}
-						<div className='space-y-3'>
-							<div
-								className={cn(
-									'flex items-center gap-3',
-									isRTL && 'flex-row-reverse'
-								)}
-							>
-								<div className='p-2 bg-primary/10 dark:bg-primary/20 rounded-lg'>
-									<Mail className='w-4 h-4 text-primary' />
-								</div>
+						{/* Social Media - LinkedIn Only */}
+						<div>
+							{dictionary.footer.social.map((social: any, index: number) => (
 								<a
-									href={`mailto:${dictionary.footer.contact.email}`}
-									className='text-sm text-muted-foreground hover:text-primary transition-colors'
+									key={index}
+									href={social.href}
+									target='_blank'
+									rel='noopener noreferrer'
+									className={cn(
+										'inline-flex items-center gap-2 p-2 bg-muted hover:bg-primary hover:text-primary-foreground text-muted-foreground rounded-lg transition-all duration-200 hover:scale-110',
+										isRTL && 'flex-row-reverse'
+									)}
+									aria-label={social.name}
 								>
-									{dictionary.footer.contact.email}
+									<Linkedin className='w-5 h-5' />
+									<span className={cn('text-sm font-medium', isRTL && 'font-arabic')}>
+										{social.name}
+									</span>
 								</a>
-							</div>
-							<div
-								className={cn(
-									'flex items-center gap-3',
-									isRTL && 'flex-row-reverse'
-								)}
-							>
-								<div className='p-2 bg-primary/10 dark:bg-primary/20 rounded-lg'>
-									<Phone className='w-4 h-4 text-primary' />
-								</div>
-								<a
-									href={`tel:${dictionary.footer.contact.phone}`}
-									className='text-sm text-muted-foreground hover:text-primary transition-colors'
-								>
-									{dictionary.footer.contact.phone}
-								</a>
-							</div>
+							))}
 						</div>
 					</motion.div>
 
-					{/* Company Links */}
+					{/* Column 2: Key Services */}
 					<motion.div
 						initial={{ opacity: 0, y: 20 }}
 						animate={{ opacity: 1, y: 0 }}
@@ -140,21 +110,20 @@ export default function Footer({ dictionary, lang }: FooterProps) {
 								isRTL && 'text-right font-arabic'
 							)}
 						>
-							{dictionary.footer.sections.company}
+							{dictionary.footer.sections.keyServices}
 						</h4>
 						<ul className='space-y-3'>
-							{dictionary.footer.links.company.map(
+							{dictionary.footer.links.keyServices.map(
 								(link: any, index: number) => (
 									<li key={index}>
 										<Link
 											href={link.href}
 											className={cn(
-												'text-sm text-muted-foreground hover:text-primary transition-colors flex items-center gap-2 group',
-												isRTL && 'flex-row-reverse font-arabic'
+												'text-sm text-muted-foreground hover:text-primary transition-colors',
+												isRTL && 'font-arabic text-right block'
 											)}
 										>
-											<span>{link.name}</span>
-											<ArrowIcon className='w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity' />
+											{link.name}
 										</Link>
 									</li>
 								)
@@ -162,7 +131,7 @@ export default function Footer({ dictionary, lang }: FooterProps) {
 						</ul>
 					</motion.div>
 
-					{/* Solutions Links */}
+					{/* Column 3: Quick Links */}
 					<motion.div
 						initial={{ opacity: 0, y: 20 }}
 						animate={{ opacity: 1, y: 0 }}
@@ -174,21 +143,20 @@ export default function Footer({ dictionary, lang }: FooterProps) {
 								isRTL && 'text-right font-arabic'
 							)}
 						>
-							{dictionary.footer.sections.solutions}
+							{dictionary.footer.sections.quickLinks}
 						</h4>
 						<ul className='space-y-3'>
-							{dictionary.footer.links.solutions.map(
+							{dictionary.footer.links.quickLinks.map(
 								(link: any, index: number) => (
 									<li key={index}>
 										<Link
 											href={link.href}
 											className={cn(
-												'text-sm text-muted-foreground hover:text-primary transition-colors flex items-center gap-2 group',
-												isRTL && 'flex-row-reverse font-arabic'
+												'text-sm text-muted-foreground hover:text-primary transition-colors',
+												isRTL && 'font-arabic text-right block'
 											)}
 										>
-											<span>{link.name}</span>
-											<ArrowIcon className='w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity' />
+											{link.name}
 										</Link>
 									</li>
 								)
@@ -196,7 +164,7 @@ export default function Footer({ dictionary, lang }: FooterProps) {
 						</ul>
 					</motion.div>
 
-					{/* Resources & Support */}
+					{/* Column 4: Contact & Legal Address */}
 					<motion.div
 						initial={{ opacity: 0, y: 20 }}
 						animate={{ opacity: 1, y: 0 }}
@@ -208,97 +176,143 @@ export default function Footer({ dictionary, lang }: FooterProps) {
 								isRTL && 'text-right font-arabic'
 							)}
 						>
-							{dictionary.footer.sections.resources}
+							{dictionary.footer.sections.contact}
 						</h4>
-						<ul className='space-y-3 mb-8'>
-							{dictionary.footer.links.resources
-								.slice(0, 4)
-								.map((link: any, index: number) => (
-									<li key={index}>
-										<Link
-											href={link.href}
-											className={cn(
-												'text-sm text-muted-foreground hover:text-primary transition-colors flex items-center gap-2 group',
-												isRTL && 'flex-row-reverse font-arabic'
-											)}
-										>
-											<span>{link.name}</span>
-											<ArrowIcon className='w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity' />
-										</Link>
-									</li>
-								))}
-						</ul>
+						<div className='space-y-4'>
+							{/* US Headquarters */}
+							<div>
+								<p
+									className={cn(
+										'text-sm font-semibold text-foreground mb-2',
+										isRTL && 'text-right font-arabic'
+									)}
+								>
+									{isRTL ? 'المقر الرئيسي (الولايات المتحدة):' : 'US Headquarters:'}
+								</p>
+								<div
+									className={cn(
+										'text-sm text-muted-foreground space-y-1',
+										isRTL && 'text-right font-arabic'
+									)}
+								>
+									<p>{dictionary.footer.company.legalName}</p>
+									<p>{dictionary.footer.company.usAddressLine1}</p>
+									<p>{dictionary.footer.company.usAddressLine2}</p>
+								</div>
+							</div>
 
-						{/* Social Media */}
-						<div>
-							<h5
-								className={cn(
-									'text-sm font-semibold text-foreground dark:text-foreground mb-4',
-									isRTL && 'text-right font-arabic'
-								)}
-							>
-								{dictionary.footer.sections.followUs}
-							</h5>
-							<div className={cn('flex gap-3', isRTL && 'flex-row-reverse')}>
-								{dictionary.footer.social.map((social: any, index: number) => {
-									const IconComponent = getSocialIcon(social.name);
-									return (
-										<a
-											key={index}
-											href={social.href}
-											target='_blank'
-											rel='noopener noreferrer'
-											className='p-2 bg-muted hover:bg-primary hover:text-primary-foreground text-muted-foreground rounded-lg transition-all duration-200 hover:scale-110'
-											aria-label={social.name}
-										>
-											<IconComponent className='w-4 h-4' />
-										</a>
-									);
-								})}
+							{/* KSA Representative */}
+							<div>
+								<p
+									className={cn(
+										'text-sm font-semibold text-foreground mb-2',
+										isRTL && 'text-right font-arabic'
+									)}
+								>
+									{isRTL ? 'الممثل في المملكة العربية السعودية:' : 'KSA Representative:'}
+								</p>
+								<div
+									className={cn(
+										'text-sm text-muted-foreground space-y-1',
+										isRTL && 'text-right font-arabic'
+									)}
+								>
+									<p>{dictionary.footer.company.ksaRepresentative}</p>
+									<p>
+										{isRTL ? 'الرقم الموحد:' : 'Unified Number:'}{' '}
+										{dictionary.footer.company.ksaUnifiedNumber}
+									</p>
+								</div>
+							</div>
+
+							{/* Contact Info */}
+							<div>
+								<p
+									className={cn(
+										'text-sm font-semibold text-foreground mb-2',
+										isRTL && 'text-right font-arabic'
+									)}
+								>
+									{isRTL ? 'الاتصال:' : 'Contact:'}
+								</p>
+								<div className='space-y-2'>
+									<a
+										href={`mailto:${dictionary.footer.contact.email}`}
+										className={cn(
+											'flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors',
+											isRTL && 'flex-row-reverse font-arabic justify-end'
+										)}
+									>
+										<Mail className='w-4 h-4' />
+										{dictionary.footer.contact.email}
+									</a>
+									<a
+										href={`tel:${dictionary.footer.contact.phone}`}
+										className={cn(
+											'flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors',
+											isRTL && 'flex-row-reverse font-arabic justify-end'
+										)}
+									>
+										<Phone className='w-4 h-4' />
+										{dictionary.footer.contact.phone}
+									</a>
+								</div>
 							</div>
 						</div>
 					</motion.div>
 				</div>
+			</div>
 
-				{/* Bottom Section */}
-				<motion.div
-					className={cn(
-						'mt-12 pt-8 border-t border-border dark:border-border flex flex-col md:flex-row md:items-center md:justify-between gap-4',
-						isRTL && 'md:flex-row-reverse'
-					)}
-					initial={{ opacity: 0, y: 20 }}
-					animate={{ opacity: 1, y: 0 }}
-					transition={{ duration: 0.6, delay: 0.5 }}
-				>
-					<p
-						className={cn(
-							'text-sm text-muted-foreground',
-							isRTL && 'text-right font-arabic'
-						)}
-					>
-						{dictionary.footer.copyright.replace(
-							'{year}',
-							currentYear.toString()
-						)}
-					</p>
-
-					{/* Language Indicator */}
+			{/* Bottom Bar (Sub-Footer) */}
+			<div
+				className={cn(
+					'border-t border-border dark:border-border bg-muted/30 dark:bg-muted/10',
+					isRTL && 'rtl font-arabic'
+				)}
+			>
+				<div className='mx-auto max-w-7xl px-6 py-6'>
 					<div
 						className={cn(
-							'flex items-center gap-2 text-sm text-muted-foreground',
-							isRTL && 'flex-row-reverse'
+							'flex flex-col md:flex-row md:items-center md:justify-between gap-4',
+							isRTL && 'md:flex-row-reverse'
 						)}
 					>
-						<div className='flex items-center gap-1'>
-							<div className='w-2 h-2 bg-green-500 rounded-full animate-pulse'></div>
-							<span className={cn(isRTL && 'font-arabic')}>
-								{isRTL
-									? 'يخدم عالمياً من السعودية'
-									: 'Serving globally from Saudi Arabia'}
-							</span>
+						{/* Copyright */}
+						<p
+							className={cn(
+								'text-sm text-muted-foreground',
+								isRTL && 'text-right font-arabic'
+							)}
+						>
+							{dictionary.footer.copyright.replace(
+								'{year}',
+								currentYear.toString()
+							)}
+						</p>
+
+						{/* Legal Links */}
+						<div
+							className={cn(
+								'flex items-center gap-4 text-sm',
+								isRTL && 'flex-row-reverse font-arabic'
+							)}
+						>
+							<Link
+								href='/legal/privacy'
+								className='text-muted-foreground hover:text-primary transition-colors'
+							>
+								{dictionary.footer.legalLinks.privacy}
+							</Link>
+							<span className='text-muted-foreground'>|</span>
+							<Link
+								href='/legal/terms'
+								className='text-muted-foreground hover:text-primary transition-colors'
+							>
+								{dictionary.footer.legalLinks.terms}
+							</Link>
 						</div>
 					</div>
-				</motion.div>
+				</div>
 			</div>
 		</footer>
 	);

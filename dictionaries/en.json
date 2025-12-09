@@ -2,11 +2,11 @@
   "hero": {
     "tagline": "AI-Powered Supply Chain Intelligence",
     "title": {
-      "part1": "Automate Your Supply Chain",
-      "part2": "Today and Watch Your",
-      "part3": "Profits Soar!"
+      "part1": "The Smarter Way to Automate Your Supply Chain.",
+      "part2": "",
+      "part3": ""
     },
-    "description": "Streamline operations, cut costs, and boost customer satisfaction with automation that works smarter, not harder.",
+    "description": "Intelligent transportation services company (ITSC) delivers smart automation to streamline your operations, cut costs, and unlock new levels of customer satisfaction.",
     "cta": "Optimize Your Supply Chain"
   },
   "header": {
@@ -91,6 +91,128 @@
       {
         "title": "Risk Management",
         "description": "Identify and mitigate supply chain risks before they impact your business."
+      }
+    ]
+  },
+  "capabilities": {
+    "title": "Capabilities",
+    "subtitle": "Engineering Certainty: Process First, Technology Second",
+    "sections": [
+      {
+        "id": "strategic-consulting",
+        "headline": "Engineering Certainty: AI-Driven Design for Future-Ready Supply Chains",
+        "icon": "Brain",
+        "content": "Utilize AI/ML for predictive modeling and Time-Series Forecasting. Use clustering to categorize inventory and translate data into actionable strategies that directly address bottlenecks. Provide holistic ROI/TCO analysis for long-term profitability.",
+        "benefits": [
+          {
+            "title": "AI/ML Predictive Modeling",
+            "description": "Advanced Time-Series Forecasting and predictive analytics to identify operational patterns and optimize supply chain performance."
+          },
+          {
+            "title": "Data-Driven Strategy",
+            "description": "Clustering techniques categorize inventory (dead stock, fast-moving items) and translate raw data into actionable strategies that directly address bottlenecks."
+          },
+          {
+            "title": "ROI/TCO Analysis",
+            "description": "Holistic financial analysis guiding clients beyond initial capital expenditure toward long-term profitability and sustainable efficiency."
+          }
+        ]
+      },
+      {
+        "id": "storage-infrastructure",
+        "headline": "Maximizing Real Estate: AS/RS and Vertical Space Optimization",
+        "icon": "Warehouse",
+        "content": "Design AS/RS to maximize cubic footage, specializing in high-bay structures. Solutions include Unit-Load Systems, Four-Way Shuttles, and VLMs. Integrate automated Pallet Handling Conveyor Systems (APS) and lifts to manage high-volume throughput.",
+        "benefits": [
+          {
+            "title": "High-Bay AS/RS",
+            "description": "Specialized high-bay structures that maximize cubic footage and more than double storage capacity."
+          },
+          {
+            "title": "Diverse AS/RS Solutions",
+            "description": "Unit-Load Systems (Stacker Cranes), Four-Way Shuttle Systems for dense storage, and specialized Vertical Lift Modules (VLMs) to save significant floor space."
+          },
+          {
+            "title": "High-Volume Throughput",
+            "description": "Automated Pallet Handling Conveyor Systems (APS) and lifts integrated to manage high-volume peak demand."
+          }
+        ]
+      },
+      {
+        "id": "robotics-automation",
+        "headline": "Dynamic Automation: Flexible Robotics for Precision and Throughput",
+        "icon": "Bot",
+        "content": "Deploy AMRs/AGVs to automate internal transport, accommodating growth and product variety. Integrate high-speed robotic cells (Robotic Inductors) with AI vision for item singulation with high reliability. Focus on modular, easily scalable solutions.",
+        "benefits": [
+          {
+            "title": "AMR/AGV Fleet",
+            "description": "Autonomous Mobile Robots (AMRs) and Automated Guided Vehicles (AGVs) automate internal transport, accommodating growth and expanding product variety."
+          },
+          {
+            "title": "High-Speed Robotic Cells",
+            "description": "Robotic Inductors with AI vision software for high-speed item singulation and induction with high reliability and peak performance."
+          },
+          {
+            "title": "Modular Scalability",
+            "description": "Modular solutions designed for easy scaling and adaptation to changing business requirements without large upfront investments."
+          }
+        ]
+      },
+      {
+        "id": "software-orchestration",
+        "headline": "Integrated Intelligence: Real-Time Control and Enterprise Compliance",
+        "icon": "Code",
+        "content": "Implement the full software hierarchy: WMS, WES (operational orchestration), and WCS. Design for 100% real-time monitoring and 100% inventory traceability (99% operational accuracy). Ensure smooth integration with host platforms (SAP EWM, ERPs). Full project lifecycle compliance, including Authority Approvals (MODON/Civil Defense) and global safety standards for ASRS.",
+        "benefits": [
+          {
+            "title": "Complete Software Stack",
+            "description": "Full software hierarchy: WMS, WES (operational orchestration layer), and WCS for comprehensive warehouse control."
+          },
+          {
+            "title": "100% Real-Time Visibility",
+            "description": "100% real-time monitoring and 100% inventory traceability to minimize discrepancies and achieve 99% or higher operational accuracy."
+          },
+          {
+            "title": "Enterprise Integration",
+            "description": "Smooth communication with host platforms (SAP EWM and other ERPs) using open interfaces and standardized protocols."
+          },
+          {
+            "title": "Full Compliance",
+            "description": "Complete project lifecycle compliance, from mechanical design (HVAC, fire protection) to Authority Approvals (MODON/Civil Defense) and global ASRS safety standards."
+          }
+        ]
+      },
+      {
+        "id": "measurable-outcomes",
+        "headline": "Impact Metrics: Quantifying Performance and Return",
+        "icon": "TrendingUp",
+        "metrics": [
+          {
+            "label": "Productivity Gains",
+            "value": "30-50%",
+            "description": "30-50% improvement"
+          },
+          {
+            "label": "Fulfillment Speed",
+            "value": "40-50%",
+            "description": "40-50% reduction in time"
+          },
+          {
+            "label": "Cost Efficiency",
+            "value": "20-30%",
+            "description": "20-30% reduction in holding costs"
+          },
+          {
+            "label": "Operational Resilience",
+            "value": "150-200%",
+            "description": "Successfully manage volume fluctuations of 150-200%"
+          },
+          {
+            "label": "Accuracy",
+            "value": "99.8%+",
+            "description": "Guaranteed pick accuracy 99.8% or higher"
+          }
+        ]
       }
     ]
   },
@@ -276,47 +398,62 @@
   "footer": {
     "company": {
       "name": "ITSC",
-      "fullName": "Intelligent Transportation Services Company",
-      "description": "ITSC is the leading AI and automation company transforming supply chain operations across the Middle East and beyond. We deliver data-driven solutions that optimize logistics, reduce costs, and drive sustainable growth for businesses worldwide."
+      "fullName": "Intelligent transportation, LLC",
+      "mission": "Delivering smart automation to streamline your operations.",
+      "legalName": "Intelligent transportation, LLC",
+      "entityType": "Delaware LLC",
+      "ein": "35-2851334",
+      "usAddress": "266 Cherry Lane, New Castle, DE 19720 US",
+      "usAddressLine1": "266 Cherry Lane",
+      "usAddressLine2": "New Castle, DE 19720 US",
+      "operations": "The company operates worldwide.",
+      "ksaRepresentative": "Rua Baida",
+      "ksaUnifiedNumber": "7050417950"
     },
     "contact": {
       "email": "info@itsc.site",
       "phone": "+966580122162"
     },
     "sections": {
-      "company": "Company",
-      "solutions": "Solutions",
-      "industries": "Industries",
-      "resources": "Resources",
-      "support": "Support",
-      "followUs": "Follow us",
-      "legal": "Legal"
+      "keyServices": "Key Services",
+      "quickLinks": "Quick Links",
+      "contact": "Contact & Legal"
     },
     "links": {
-      "company": [
+      "keyServices": [
         {
-          "name": "About ITSC",
-          "href": "/about"
-        },
-        {
-          "name": "Our Solutions",
+          "name": "Supply Chain Automation",
           "href": "/services"
         },
         {
-          "name": "Success Stories",
-          "href": "/portfolio"
+          "name": "Demand Forecasting",
+          "href": "/solutions/demand-forecasting"
         },
         {
-          "name": "Leadership Team",
-          "href": "/team"
+          "name": "Route Optimization",
+          "href": "/solutions/route-optimization"
+        },
+        {
+          "name": "Warehouse Automation",
+          "href": "/solutions/warehouse-automation"
+        },
+        {
+          "name": "Request a Demo",
+          "href": "/contact"
+        }
+      ],
+      "quickLinks": [
+        {
+          "name": "About Us",
+          "href": "/about"
+        },
+        {
+          "name": "Contact",
+          "href": "/contact"
         },
         {
           "name": "Careers",
           "href": "/careers"
-        },
-        {
-          "name": "News & Media",
-          "href": "/news"
         }
       ],
       "solutions": [
@@ -453,25 +590,13 @@
     "social": [
       {
         "name": "LinkedIn",
-        "href": "https://linkedin.com/company/itsc-solutions"
-      },
-      {
-        "name": "Twitter",
-        "href": "https://twitter.com/itsc_solutions"
-      },
-      {
-        "name": "YouTube",
-        "href": "https://youtube.com/@itsc-solutions"
-      },
-      {
-        "name": "Facebook",
-        "href": "https://facebook.com/itsc.solutions"
-      },
-      {
-        "name": "Instagram",
-        "href": "https://instagram.com/itsc_solutions"
+        "href": "https://www.linkedin.com/company/intelligent-transportation-services-company/"
       }
     ],
-    "copyright": "© {year} ITSC (Intelligent Transportation Services Company). All rights reserved."
+    "copyright": "© {year} Intelligent transportation, LLC. All Rights Reserved.",
+    "legalLinks": {
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service"
+    }
   }
 }

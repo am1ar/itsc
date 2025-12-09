@@ -3,6 +3,7 @@
 import { Dictionary } from '@/types/dictionary';
 import { motion } from 'framer-motion';
 import { BarChart3, Globe, Target, Zap } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
 const icons = [Target, Zap, BarChart3, Globe];
 
@@ -12,16 +13,24 @@ interface AboutSectionProps {
 }
 
 export default function AboutSection({ dictionary, lang }: AboutSectionProps) {
+	const isRTL = lang === 'ar';
+	
 	return (
-		<section className='relative z-10 bg-muted dark:bg-muted/10 py-24'>
+		<section 
+			className={cn(
+				'relative z-10 bg-muted dark:bg-muted/10 py-24',
+				isRTL && 'rtl font-arabic'
+			)}
+			dir={isRTL ? 'rtl' : 'ltr'}
+		>
 			<div className='container mx-auto max-w-7xl px-6'>
 				<div className='relative z-10 px-6 py-24'>
 					<div className='mx-auto max-w-7xl'>
 						<div className='grid gap-12 lg:grid-cols-2 lg:gap-24 items-center'>
 							{/* Left Column - Content */}
 							<motion.div
-								className='space-y-8'
-								initial={{ opacity: 0, x: -20 }}
+								className={cn('space-y-8', isRTL && 'text-right')}
+								initial={{ opacity: 0, x: isRTL ? 20 : -20 }}
 								animate={{ opacity: 1, x: 0 }}
 								transition={{ duration: 0.6 }}
 							>
@@ -31,11 +40,17 @@ export default function AboutSection({ dictionary, lang }: AboutSectionProps) {
 									</span>
 								</div>
 
-								<h2 className='text-4xl font-mono leading-tight dark:text-white'>
+								<h2 className={cn(
+									'text-4xl font-mono leading-tight dark:text-white',
+									isRTL && 'text-right font-arabic'
+								)}>
 									{dictionary.about.title}
 								</h2>
 
-								<p className='text-lg text-gray-600 dark:text-gray-300'>
+								<p className={cn(
+									'text-lg text-gray-600 dark:text-gray-300',
+									isRTL && 'text-right font-arabic'
+								)}>
 									{dictionary.about.description}
 								</p>
 
@@ -43,7 +58,10 @@ export default function AboutSection({ dictionary, lang }: AboutSectionProps) {
 									{dictionary.about.features.map((feature, index) => (
 										<motion.div
 											key={feature.title}
-											className='flex items-start gap-4'
+											className={cn(
+												'flex items-start gap-4',
+												isRTL && 'flex-row-reverse'
+											)}
 											initial={{ opacity: 0, y: 20 }}
 											animate={{ opacity: 1, y: 0 }}
 											transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
@@ -65,11 +83,17 @@ export default function AboutSection({ dictionary, lang }: AboutSectionProps) {
 													/>
 												</svg>
 											</div>
-											<div>
-												<h3 className='font-semibold text-foreground dark:text-foreground mb-1'>
+											<div className={cn(isRTL && 'text-right')}>
+												<h3 className={cn(
+													'font-semibold text-foreground dark:text-foreground mb-1',
+													isRTL && 'text-right font-arabic'
+												)}>
 													{feature.title}
 												</h3>
-												<p className='text-gray-600 dark:text-gray-300'>
+												<p className={cn(
+													'text-gray-600 dark:text-gray-300',
+													isRTL && 'text-right font-arabic'
+												)}>
 													{feature.description}
 												</p>
 											</div>
@@ -81,7 +105,7 @@ export default function AboutSection({ dictionary, lang }: AboutSectionProps) {
 							{/* Right Column - Stats */}
 							<motion.div
 								className='grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8'
-								initial={{ opacity: 0, x: 20 }}
+								initial={{ opacity: 0, x: isRTL ? -20 : 20 }}
 								animate={{ opacity: 1, x: 0 }}
 								transition={{ duration: 0.6, delay: 0.2 }}
 							>

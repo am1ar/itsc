@@ -1,20 +1,8 @@
-import { match } from '@formatjs/intl-localematcher';
-import Negotiator from 'negotiator';
 import { type NextRequest, NextResponse } from 'next/server';
 
 // List of supported languages
 export const languages = ['en', 'ar'];
 export const defaultLanguage = 'en';
-
-// Get the preferred language from the request
-function getLanguage(request: NextRequest) {
-	const negotiatorHeaders: Record<string, string> = {};
-	request.headers.forEach((value, key) => (negotiatorHeaders[key] = value));
-
-	const languages = new Negotiator({ headers: negotiatorHeaders }).languages();
-	const locales = ['en', 'ar']; // Define supported locales
-	return match(languages, locales, defaultLanguage);
-}
 
 export function middleware(request: NextRequest) {
 	const pathname = request.nextUrl.pathname;
@@ -35,8 +23,8 @@ export function middleware(request: NextRequest) {
 
 	if (pathnameHasLanguage) return NextResponse.next();
 
-	// Redirect if there is no language
-	const lang = getLanguage(request);
+	// Always default to English when no language prefix is provided
+	const lang = defaultLanguage;
 	const newUrl = new URL(
 		`/${lang}${pathname.startsWith('/') ? '' : '/'}${pathname}`,
 		request.url

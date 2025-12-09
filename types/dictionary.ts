@@ -48,6 +48,25 @@ export interface Dictionary {
 			description: string;
 		}>;
 	};
+	capabilities: {
+		title: string;
+		subtitle: string;
+		sections: Array<{
+			id: string;
+			headline: string;
+			icon: string;
+			content?: string;
+			benefits?: Array<{
+				title: string;
+				description: string;
+			}>;
+			metrics?: Array<{
+				label: string;
+				value: string;
+				description: string;
+			}>;
+		}>;
+	};
 	howWeWork: {
 		title: string;
 		description: string;
