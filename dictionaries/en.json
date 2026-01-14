@@ -1,13 +1,13 @@
 {
   "hero": {
-    "tagline": "AI-Powered Supply Chain Intelligence",
+    "tagline": "High-Tech Transportation Solutions & Logistics Intelligence",
     "title": {
-      "part1": "The Smarter Way to Automate Your Supply Chain.",
+      "part1": "Powering the Future of Mobility with AI",
       "part2": "",
       "part3": ""
     },
-    "description": "Intelligent transportation services company (ITSC) delivers smart automation to streamline your operations, cut costs, and unlock new levels of customer satisfaction.",
-    "cta": "Optimize Your Supply Chain"
+    "description": "ITSC delivers cutting-edge transportation technology and logistics intelligence solutions. We transform how businesses move goods, optimize routes, and manage fleets through advanced AI, data analytics, and intelligent automation.",
+    "cta": "Explore Our Solutions"
   },
   "header": {
     "home": "Home",
@@ -21,19 +21,19 @@
   },
   "about": {
     "title": "About Us",
-    "description": "We are a team of experts dedicated to transforming supply chains through innovative AI solutions.",
+    "description": "ITSC is a leading technology consultancy specializing in high-tech transportation solutions and logistics intelligence. We combine advanced AI, big data analytics, and intelligent automation to revolutionize how businesses manage transportation, optimize logistics operations, and power the future of mobility.",
     "features": [
       {
-        "title": "Data-Driven Excellence",
-        "description": "Every decision backed by comprehensive analytics and intelligent insights"
+        "title": "Transport Technology Innovation",
+        "description": "Pioneering AI-powered solutions for route optimization, fleet management, and transportation data analytics that deliver measurable results"
       },
       {
-        "title": "Innovation Leadership",
-        "description": "Pioneering AI and automation technologies that transform supply chain operations"
+        "title": "Logistics Intelligence Leadership",
+        "description": "Leveraging big data and machine learning to predict logistics trends, optimize operations, and drive strategic decision-making"
       },
       {
-        "title": "Global Impact",
-        "description": "From Saudi Arabia to the world, delivering solutions that transcend borders"
+        "title": "Enterprise-Grade Solutions",
+        "description": "Building custom transportation software ecosystems, yard management systems, and integrated logistics platforms for global corporations"
       }
     ],
     "stats": [
@@ -57,40 +57,44 @@
   },
   "services": {
     "title": "Our Solutions",
-    "description": "Comprehensive supply chain solutions powered by cutting-edge AI technology.",
+    "description": "Advanced transportation technology and logistics intelligence solutions for modern enterprises.",
     "categories": {
       "all": "All Solutions",
       "analytics": "Analytics & Intelligence",
       "operations": "Operations & Logistics",
-      "risk": "Risk & Compliance",
       "technology": "Technology & Integration",
-      "services": "Services & Support"
+      "fleet": "Fleet & Transportation",
+      "warehouse": "Warehouse Solutions"
     },
     "searchPlaceholder": "Search solutions...",
     "items": [
       {
-        "title": "AI-Driven Analytics",
-        "description": "Transform your supply chain data into actionable insights with our advanced AI analytics platform."
-      },
-      {
-        "title": "Demand Forecasting",
-        "description": "Predict market demands with 95% accuracy using our machine learning algorithms."
-      },
-      {
-        "title": "Inventory Optimization",
-        "description": "Optimize your inventory levels and reduce carrying costs with smart automation."
+        "title": "Transport Data Analytics & AI",
+        "description": "Harness big data to predict logistics trends, optimize transportation networks, and drive strategic decision-making with advanced AI analytics."
       },
       {
         "title": "Route Optimization",
-        "description": "Minimize delivery times and fuel costs with AI-powered route planning."
+        "description": "Advanced algorithms for efficient delivery paths, reducing fuel costs, transit times, and operational expenses while maximizing fleet utilization."
       },
       {
-        "title": "Supply Chain Visibility",
-        "description": "Get real-time visibility into your entire supply chain operations."
+        "title": "Fleet Management",
+        "description": "Real-time tracking, asset control, and comprehensive fleet optimization solutions for enhanced visibility and operational efficiency."
       },
       {
-        "title": "Risk Management",
-        "description": "Identify and mitigate supply chain risks before they impact your business."
+        "title": "Yard Management Systems (YMS)",
+        "description": "Intelligent dock scheduling, yard flow optimization, and container management systems that streamline logistics operations."
+      },
+      {
+        "title": "System Architecture & Development",
+        "description": "Custom transportation software ecosystems tailored to your business needs, including enterprise integrations and scalable platform development."
+      },
+      {
+        "title": "Logistics Software Solutions",
+        "description": "Comprehensive logistics software including Warehouse Management Systems (WMS), ERP integrations, and end-to-end supply chain platforms."
+      },
+      {
+        "title": "Warehouse Automation",
+        "description": "Intelligent warehouse automation systems including AS/RS, robotics, and automated material handling for enhanced operational efficiency."
       }
     ]
   },
@@ -336,12 +340,13 @@
         "other": "Other"
       },
       "interests": {
-        "demandForecasting": "Demand Forecasting",
-        "warehouseAutomation": "Warehouse Automation",
+        "transportAnalytics": "Transport Data Analytics & AI",
         "routeOptimization": "Route Optimization",
-        "supplyChainVisibility": "Supply Chain Visibility",
         "fleetManagement": "Fleet Management",
-        "riskManagement": "Risk Management",
+        "yardManagement": "Yard Management Systems (YMS)",
+        "systemArchitecture": "System Architecture & Development",
+        "logisticsSoftware": "Logistics Software Solutions",
+        "warehouseAutomation": "Warehouse Automation",
         "consultation": "General Consultation"
       }
     },
@@ -422,24 +427,32 @@
     "links": {
       "keyServices": [
         {
-          "name": "Supply Chain Automation",
-          "href": "/services"
-        },
-        {
-          "name": "Demand Forecasting",
-          "href": "/solutions/demand-forecasting"
+          "name": "Transport Data Analytics & AI",
+          "href": "/solutions/data-ai"
         },
         {
           "name": "Route Optimization",
-          "href": "/solutions/route-optimization"
+          "href": "/solutions/routes"
+        },
+        {
+          "name": "Fleet Management",
+          "href": "/solutions/fleet"
+        },
+        {
+          "name": "Yard Management Systems",
+          "href": "/solutions/yms"
+        },
+        {
+          "name": "System Architecture",
+          "href": "/solutions/architecture"
+        },
+        {
+          "name": "Logistics Software",
+          "href": "/solutions/software"
         },
         {
           "name": "Warehouse Automation",
           "href": "/solutions/warehouse-automation"
-        },
-        {
-          "name": "Request a Demo",
-          "href": "/contact"
         }
       ],
       "quickLinks": [

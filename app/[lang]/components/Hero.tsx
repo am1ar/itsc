@@ -88,7 +88,7 @@ export default function Hero({ dictionary, lang }: HeroProps) {
 							{dictionary.hero.cta}
 						</motion.button>
 					</a>
-					<a href={`/${lang}/solutions/warehouse-automation`}>
+					<a href={`/${lang}/contact`}>
 						<motion.button
 							className={cn(
 								'rounded-full border-2 border-primary px-8 py-4 text-lg font-medium text-primary transition-colors hover:bg-primary/10',
@@ -97,7 +97,7 @@ export default function Hero({ dictionary, lang }: HeroProps) {
 							whileHover={{ scale: 1.05 }}
 							whileTap={{ scale: 0.95 }}
 						>
-							{lang === 'ar' ? 'اكتشف أتمتة المستودعات' : 'Explore Warehouse Automation'}
+							{lang === 'ar' ? 'احصل على استشارة' : 'Get Consultation'}
 						</motion.button>
 					</a>
 				</motion.div>

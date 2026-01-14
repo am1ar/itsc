@@ -1,7 +1,7 @@
 import { getDictionary } from '@/get-dictionary';
 import { i18n, Locale } from '@/i18n-config';
 import { Dictionary } from '@/types/dictionary';
-import PlaceholderPage from '../../../components/PlaceholderPage';
+import PlaceholderPage from '../../components/PlaceholderPage';
 
 export default async function TrainingPage({
 	params,

@@ -117,7 +117,7 @@ export default function Footer({ dictionary, lang }: FooterProps) {
 								(link: any, index: number) => (
 									<li key={index}>
 										<Link
-											href={link.href}
+											href={`/${lang}${link.href}`}
 											className={cn(
 												'text-sm text-muted-foreground hover:text-primary transition-colors',
 												isRTL && 'font-arabic text-right block'
@@ -150,7 +150,7 @@ export default function Footer({ dictionary, lang }: FooterProps) {
 								(link: any, index: number) => (
 									<li key={index}>
 										<Link
-											href={link.href}
+											href={`/${lang}${link.href}`}
 											className={cn(
 												'text-sm text-muted-foreground hover:text-primary transition-colors',
 												isRTL && 'font-arabic text-right block'
@@ -298,14 +298,14 @@ export default function Footer({ dictionary, lang }: FooterProps) {
 							)}
 						>
 							<Link
-								href='/legal/privacy'
+								href={`/${lang}/legal/privacy`}
 								className='text-muted-foreground hover:text-primary transition-colors'
 							>
 								{dictionary.footer.legalLinks.privacy}
 							</Link>
 							<span className='text-muted-foreground'>|</span>
 							<Link
-								href='/legal/terms'
+								href={`/${lang}/legal/terms`}
 								className='text-muted-foreground hover:text-primary transition-colors'
 							>
 								{dictionary.footer.legalLinks.terms}

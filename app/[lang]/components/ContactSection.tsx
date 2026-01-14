@@ -450,23 +450,26 @@ export default function ContactSection({
                     <option value="">
                       {dictionary.contact.form.placeholders.interest}
                     </option>
-                    <option value="demand-forecasting">
-                      {dictionary.contact.form.interests.demandForecasting}
-                    </option>
-                    <option value="warehouse-automation">
-                      {dictionary.contact.form.interests.warehouseAutomation}
+                    <option value="transport-analytics">
+                      {dictionary.contact.form.interests.transportAnalytics}
                     </option>
                     <option value="route-optimization">
                       {dictionary.contact.form.interests.routeOptimization}
                     </option>
-                    <option value="supply-chain-visibility">
-                      {dictionary.contact.form.interests.supplyChainVisibility}
-                    </option>
                     <option value="fleet-management">
                       {dictionary.contact.form.interests.fleetManagement}
                     </option>
-                    <option value="risk-management">
-                      {dictionary.contact.form.interests.riskManagement}
+                    <option value="yard-management">
+                      {dictionary.contact.form.interests.yardManagement}
+                    </option>
+                    <option value="system-architecture">
+                      {dictionary.contact.form.interests.systemArchitecture}
+                    </option>
+                    <option value="logistics-software">
+                      {dictionary.contact.form.interests.logisticsSoftware}
+                    </option>
+                    <option value="warehouse-automation">
+                      {dictionary.contact.form.interests.warehouseAutomation}
                     </option>
                     <option value="consultation">
                       {dictionary.contact.form.interests.consultation}

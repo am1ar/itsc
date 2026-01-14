@@ -21,15 +21,28 @@ interface SolutionSectionProps {
 	lang: string;
 }
 
-// Solution categories
-const categories = [
-	{ id: 'all', name: 'All Solutions' },
-	{ id: 'analytics', name: 'Analytics & Intelligence' },
-	{ id: 'operations', name: 'Operations & Logistics' },
-	{ id: 'risk', name: 'Risk & Compliance' },
-	{ id: 'technology', name: 'Technology & Integration' },
-	{ id: 'services', name: 'Services & Support' },
-];
+// Solution categories - dynamically use dictionary categories when available
+const getCategories = (dict: Dictionary) => {
+	if (dict?.services?.categories) {
+		return [
+			{ id: 'all', name: dict.services.categories.all },
+			{ id: 'analytics', name: dict.services.categories.analytics },
+			{ id: 'operations', name: dict.services.categories.operations },
+			{ id: 'technology', name: dict.services.categories.technology },
+			{ id: 'fleet', name: dict.services.categories.fleet || 'Fleet & Transportation' },
+			{ id: 'warehouse', name: dict.services.categories.warehouse || 'Warehouse Solutions' },
+		];
+	}
+	// Fallback categories
+	return [
+		{ id: 'all', name: 'All Solutions' },
+		{ id: 'analytics', name: 'Analytics & Intelligence' },
+		{ id: 'operations', name: 'Operations & Logistics' },
+		{ id: 'technology', name: 'Technology & Integration' },
+		{ id: 'fleet', name: 'Fleet & Transportation' },
+		{ id: 'warehouse', name: 'Warehouse Solutions' },
+	];
+};
 
 const impactStats = [
 	{ icon: DollarSign, value: '$50M+', label: 'Cost Savings Delivered' },
@@ -44,6 +57,9 @@ export default function SolutionSection({
 }: SolutionSectionProps) {
 	const [activeCategory, setActiveCategory] = useState('all');
 	const [searchQuery, setSearchQuery] = useState('');
+
+	// Get categories from dictionary
+	const categories = getCategories(dictionary);
 
 	// Get localized solutions
 	const localizedSolutions =
@@ -111,7 +127,7 @@ export default function SolutionSection({
 							{dictionary.services.title}
 						</h3>
 						<Link
-							href='/solutions'
+							href={`/${lang}/services`}
 							className='flex items-center text-primary hover:underline'
 						>
 							{dictionary.services.categories.all}{' '}
@@ -178,7 +194,7 @@ export default function SolutionSection({
 									</div>
 
 									<Link
-										href={solution.link}
+										href={`/${lang}${solution.link}`}
 										className={cn(
 											'inline-flex items-center text-sm font-medium text-primary hover:underline',
 											isRTL && 'flex-row-reverse justify-end'
@@ -285,7 +301,7 @@ export default function SolutionSection({
 									</div>
 
 									<Link
-										href={solution.link}
+										href={`/${lang}${solution.link}`}
 										className='inline-flex items-center text-sm font-medium text-primary hover:underline'
 									>
 										{dictionary.services.categories.all}{' '}
