@@ -1,13 +1,13 @@
 {
   "hero": {
-    "tagline": "High-Tech Transportation Solutions & Logistics Intelligence",
+    "tagline": "The Smarter Way to Automate Your Supply Chain",
     "title": {
-      "part1": "Powering the Future of Mobility with AI",
-      "part2": "",
-      "part3": ""
+      "part1": "The Smarter Way to Automate Your Supply Chain",
+      "part2": "Intelligent Transportation Services Company (ITSC)",
+      "part3": "AI, Data & Architecture for End-to-End Logistics"
     },
-    "description": "ITSC delivers cutting-edge transportation technology and logistics intelligence solutions. We transform how businesses move goods, optimize routes, and manage fleets through advanced AI, data analytics, and intelligent automation.",
-    "cta": "Explore Our Solutions"
+    "description": "Intelligent transportation services company (ITSC) delivers smart automation to streamline your operations, cut costs, and unlock new levels of customer satisfaction. We combine AI, transportation data analytics, and modern system architecture to automate planning, execution, and performance management across your entire supply chain.",
+    "cta": "Talk to a Supply Chain Automation Expert"
   },
   "header": {
     "home": "Home",

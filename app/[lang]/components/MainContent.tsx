@@ -8,6 +8,7 @@ import Footer from './Footer';
 import Header from './Header';
 import Hero from './Hero';
 import HowWeWorkSection from './HowWeWorkSection';
+import SCMPillarsSection from './SCMPillarsSection';
 import SolutionSection from './SolutionSection';
 import SuccessStorySection from './SuccessStorySection';
 
@@ -22,6 +23,9 @@ export default function MainContent({ dictionary, lang }: MainContentProps) {
 			<Header dictionary={dictionary} lang={lang} />
 			<div id='hero'>
 				<Hero dictionary={dictionary} lang={lang} />
+			</div>
+			<div id='scm-pillars'>
+				<SCMPillarsSection dictionary={dictionary} lang={lang} />
 			</div>
 			<div id='about'>
 				<AboutSection dictionary={dictionary} lang={lang} />

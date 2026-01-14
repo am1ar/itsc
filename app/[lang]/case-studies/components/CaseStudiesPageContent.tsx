@@ -183,6 +183,222 @@ const caseStudies = [
 		],
 		duration: '6 months',
 		teamSize: '22 people'
+	},
+	{
+		id: 3,
+		title: {
+			en: 'Global Retailer Cuts Ocean Lead-Time Risk with Predictive Control Tower',
+			ar: 'تاجر تجزئة عالمي يقلل مخاطر أوقات النقل البحري من خلال مركز تحكم تنبؤي'
+		},
+		industry: {
+			en: 'Ocean Logistics',
+			ar: 'اللوجستيات البحرية'
+		},
+		challenge: {
+			en: 'A global retailer relying heavily on ocean freight to stock regional distribution centers faced extreme variability in lead times. Port congestion, weather, and carrier schedule changes meant that planners routinely upgraded shipments to air at the last minute, driving up logistics cost while still suffering from stockouts in key markets.',
+			ar: 'واجه تاجر تجزئة عالمي يعتمد بشكل كبير على الشحن البحري لتزويد مراكز التوزيع الإقليمية بتقلبات شديدة في أوقات النقل. أدت ازدحامات الموانئ والطقس وتغييرات جداول الناقلين إلى قيام المخططين بترقية الشحنات إلى الشحن الجوي في اللحظة الأخيرة، مما زاد من تكاليف اللوجستيات مع استمرار نقص المخزون في الأسواق الرئيسية.'
+		},
+		solution: {
+			en: 'ITSC implemented an ocean logistics control tower powered by AI and transportation data analytics. Step 1: we integrated carrier schedules, port-event data, weather feeds, and historical voyage performance into a unified data lake. Step 2: machine-learning models generated predictive ETAs and risk scores for every container, weeks before arrival. Step 3: planners used a digital twin of the network to simulate alternative routings, transshipment options, and inventory buffers. Step 4: we embedded these insights into replenishment and transportation planning systems so that mode shifts (ocean vs. air) were triggered by quantified risk rather than gut feel.',
+			ar: 'نفذت ITSC مركز تحكم في اللوجستيات البحرية مدعوم بالذكاء الاصطناعي وتحليلات بيانات النقل. الخطوة 1: قمنا بدمج جداول الناقلين وبيانات أحداث الموانئ وتغذيات الطقس وأداء الرحلات التاريخي في بحيرة بيانات موحدة. الخطوة 2: أنشأت نماذج التعلم الآلي أوقات وصول متوقعة ودرجات مخاطرة لكل حاوية قبل أسابيع من الوصول. الخطوة 3: استخدم المخططون توأماً رقمياً للشبكة لمحاكاة مسارات بديلة وخيارات إعادة الشحن واحتياطيات المخزون. الخطوة 4: قمنا بدمج هذه الرؤى في أنظمة تخطيط التزويد والنقل بحيث تستند تغييرات النمط (بحري مقابل جوي) إلى مخاطرة كمية وليست على الحدس.'
+		},
+		keyFeatures: {
+			en: [
+				'Predictive ETAs and risk scoring for every ocean shipment',
+				'Integration of carrier, port, and weather datasets',
+				'Network digital twin for “what-if” simulations',
+				'Dynamic mode-shift recommendations (ocean vs. air)',
+				'Dashboards for planners, procurement, and merchandising'
+			],
+			ar: [
+				'أوقات وصول متوقعة ودرجات مخاطرة لكل شحنة بحرية',
+				'تكامل بيانات الناقلين والموانئ والطقس',
+				'توأم رقمي للشبكة لمحاكاة "ماذا لو"',
+				'توصيات ديناميكية لتغيير النمط (بحري مقابل جوي)',
+				'لوحات معلومات للمخططين والمشتريات والتسويق'
+			]
+		},
+		results: [
+			{
+				metric: '28%',
+				description: {
+					en: 'Reduction in Premium Air Upgrades',
+					ar: 'انخفاض في الترقيات إلى الشحن الجوي المميز'
+				},
+				detail: {
+					en: 'Ocean disruptions were anticipated early enough to avoid many last-minute air shipments',
+					ar: 'تم توقع اضطرابات النقل البحري في وقت مبكر بما يكفي لتجنب العديد من شحنات الشحن الجوي في اللحظة الأخيرة'
+				}
+			},
+			{
+				metric: '15%',
+				description: {
+					en: 'Improvement in On-Time DC Availability',
+					ar: 'تحسن في توفر المخزون في مراكز التوزيع في الوقت المحدد'
+				},
+				detail: {
+					en: 'Key SKUs were available more consistently at regional DCs during peak seasons',
+					ar: 'توفر أفضل للمنتجات الرئيسية في مراكز التوزيع الإقليمية خلال المواسم الحرجة'
+				}
+			},
+			{
+				metric: 'ROI: 14 months',
+				description: {
+					en: 'Return on Investment',
+					ar: 'العائد على الاستثمار'
+				},
+				detail: {
+					en: 'Savings from avoided airfreight and better inventory usage paid back the program in just over a year',
+					ar: 'وفورات من تجنب الشحن الجوي وتحسين استخدام المخزون غطت تكلفة البرنامج في أكثر من عام بقليل'
+				}
+			}
+		],
+		duration: '8 months',
+		teamSize: '24 people'
+	},
+	{
+		id: 4,
+		title: {
+			en: 'High-Value Components Protected with AI-Enabled Air Logistics',
+			ar: 'حماية مكونات عالية القيمة من خلال لوجستيات جوية مدعومة بالذكاء الاصطناعي'
+		},
+		industry: {
+			en: 'Air Logistics',
+			ar: 'اللوجستيات الجوية'
+		},
+		challenge: {
+			en: 'A manufacturer shipping high-value, temperature-sensitive components by air struggled with damage, delays at transit hubs, and limited visibility across carriers and ground-handling partners. Each incident triggered expensive write-offs and production delays downstream.',
+			ar: 'واجه مصنع يشحن مكونات عالية القيمة وحساسة للحرارة عن طريق الجو مشاكل في التلف والتأخير في محطات العبور وضعف الرؤية عبر الناقلين وشركاء المناولة الأرضية. كل حادث كان يؤدي إلى شطبات مكلفة وتأخيرات في الإنتاج في المراحل اللاحقة.'
+		},
+		solution: {
+			en: 'ITSC designed an air-logistics visibility and risk-management solution. Step 1: we equipped shipments with IoT sensors monitoring temperature and shock and integrated sensor feeds with airline and ground-handler tracking events. Step 2: AI models flagged lanes, partners, and facilities with abnormal damage or delay patterns. Step 3: we configured dynamic routing and service-level rules in the TMS, automatically steering critical loads to best-performing routes and partners. Step 4: dashboards gave logistics and quality teams a shared view of risk and performance.',
+			ar: 'صممت ITSC حلاً لرؤية الشحنات الجوية وإدارة المخاطر. الخطوة 1: قمنا بتزويد الشحنات بأجهزة استشعار إنترنت الأشياء لمراقبة درجة الحرارة والصدمات، ودمجنا بياناتها مع أحداث التتبع لدى شركات الطيران والمناولة الأرضية. الخطوة 2: حددت نماذج الذكاء الاصطناعي المسارات والشركاء والمرافق ذات أنماط التلف أو التأخير غير الطبيعية. الخطوة 3: قمنا بتهيئة قواعد التوجيه الديناميكي ومستويات الخدمة في نظام إدارة النقل، لتوجيه الشحنات الحرجة تلقائياً إلى أفضل المسارات والشركاء أداءً. الخطوة 4: وفرت لوحات المعلومات رؤية مشتركة بين فرق اللوجستيات والجودة حول المخاطر والأداء.'
+		},
+		keyFeatures: {
+			en: [
+				'IoT sensors for temperature and shock',
+				'End-to-end air shipment visibility',
+				'AI risk scoring by lane and partner',
+				'Dynamic routing and service-level rules',
+				'Quality and logistics shared dashboards'
+			],
+			ar: [
+				'أجهزة استشعار إنترنت الأشياء لدرجة الحرارة والصدمات',
+				'رؤية شاملة للشحنات الجوية',
+				'درجات مخاطر مدعومة بالذكاء الاصطناعي حسب المسار والشريك',
+				'قواعد توجيه ديناميكية ومستويات خدمة',
+				'لوحات معلومات مشتركة للجودة واللوجستيات'
+			]
+		},
+		results: [
+			{
+				metric: '40%',
+				description: {
+					en: 'Reduction in Damage Incidents',
+					ar: 'انخفاض في حوادث التلف'
+				},
+				detail: {
+					en: 'Lower damage rates through better packaging, routing, and partner selection',
+					ar: 'انخفاض معدلات التلف من خلال تحسين التغليف والتوجيه واختيار الشركاء'
+				}
+			},
+			{
+				metric: '18%',
+				description: {
+					en: 'Decrease in Average Lead Time Variability',
+					ar: 'انخفاض في تذبذب متوسط أوقات النقل'
+				},
+				detail: {
+					en: 'More predictable lead times enabled better production scheduling',
+					ar: 'أوقات نقل أكثر قابلية للتنبؤ مكنت من جدولة إنتاج أفضل'
+				}
+			},
+			{
+				metric: 'ROI: 10 months',
+				description: {
+					en: 'Return on Investment',
+					ar: 'العائد على الاستثمار'
+				},
+				detail: {
+					en: 'Reduced write-offs and premium shipments paid back the initiative within the first year',
+					ar: 'الحد من الشطبات والشحنات المميزة غطى تكلفة المبادرة خلال السنة الأولى'
+				}
+			}
+		],
+		duration: '5 months',
+		teamSize: '16 people'
+	},
+	{
+		id: 5,
+		title: {
+			en: 'Regional Distributor Transforms Road Network with AI Routing',
+			ar: 'موزع إقليمي يحول شبكته البرية من خلال التوجيه المدعوم بالذكاء الاصطناعي'
+		},
+		industry: {
+			en: 'Road Logistics',
+			ar: 'اللوجستيات البرية'
+		},
+		challenge: {
+			en: 'A regional distributor operating hundreds of vehicles across multiple depots relied on static route books and dispatcher experience. Empty miles, uneven workloads, and frequent ad-hoc changes led to high operating costs and inconsistent service.',
+			ar: 'اعتمد موزع إقليمي يدير مئات المركبات عبر مستودعات متعددة على كتيبات مسارات ثابتة وخبرة المراقبين. أدت الأميال الفارغة وعدم توازن الأحمال والتغييرات الارتجالية المتكررة إلى ارتفاع التكاليف التشغيلية وخدمة غير متسقة.'
+		},
+		solution: {
+			en: 'ITSC deployed an AI-powered road logistics solution. Step 1: we integrated WMS order feeds, depot constraints, and telematics data into a planning platform. Step 2: dynamic routing engines generated optimized daily and intra-day plans that respected customer time windows and driver rules. Step 3: driver mobile apps delivered turn-by-turn guidance and captured proof-of-delivery. Step 4: performance dashboards and KPIs helped supervisors and management continuously refine strategies.',
+			ar: 'نشرت ITSC حلاً للوجستيات البرية مدعوماً بالذكاء الاصطناعي. الخطوة 1: قمنا بدمج أوامر WMS وقيود المستودعات وبيانات التليماتية في منصة تخطيط. الخطوة 2: أنشأت محركات التوجيه الديناميكي خططاً يومية وداخل اليوم محسّنة تحترم نوافذ وقت العملاء وقواعد السائقين. الخطوة 3: قدمت تطبيقات الهاتف للسائقين إرشاداً خطوة بخطوة وسجلت إثبات التسليم. الخطوة 4: ساعدت لوحات الأداء ومؤشرات الأداء الرئيسية المشرفين والإدارة على تحسين الاستراتيجيات باستمرار.'
+		},
+		keyFeatures: {
+			en: [
+				'Dynamic daily and intra-day routing',
+				'Integration with WMS, TMS, and telematics',
+				'Driver mobile application with POD capture',
+				'Real-time performance dashboards',
+				'Continuous-improvement routines for depots'
+			],
+			ar: [
+				'توجيه يومي وداخل اليوم ديناميكي',
+				'تكامل مع WMS وTMS وبيانات التليماتية',
+				'تطبيق جوال للسائق مع إثبات التسليم',
+				'لوحات أداء في الوقت الفعلي',
+				'روتينات تحسين مستمر للمستودعات'
+			]
+		},
+		results: [
+			{
+				metric: '18%',
+				description: {
+					en: 'Reduction in Total Miles Driven',
+					ar: 'انخفاض في إجمالي الأميال المقطوعة'
+				},
+				detail: {
+					en: 'Fewer empty and inefficient miles across the network',
+					ar: 'عدد أقل من الأميال الفارغة وغير الفعالة عبر الشبكة'
+				}
+			},
+			{
+				metric: '9 pts',
+				description: {
+					en: 'Improvement in OTIF',
+					ar: 'تحسن في التسليم في الوقت وبالكامل'
+				},
+				detail: {
+					en: 'On-time in-full performance increased within six months',
+					ar: 'تحسن أداء التسليم في الوقت وبالكامل خلال ستة أشهر'
+				}
+			},
+			{
+				metric: '15%',
+				description: {
+					en: 'Reduction in Delivery Cost per Order',
+					ar: 'انخفاض في تكلفة التسليم لكل طلب'
+				},
+				detail: {
+					en: 'Lower fuel, overtime, and third-party costs for road operations',
+					ar: 'انخفاض تكاليف الوقود والعمل الإضافي والطرف الثالث للعمليات البرية'
+				}
+			}
+		],
+		duration: '6 months',
+		teamSize: '20 people'
 	}
 ];
 
